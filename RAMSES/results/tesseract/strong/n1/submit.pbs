@@ -1,0 +1,23 @@
+#!/bin/bash --login
+
+#PBS -N ramses
+#PBS -l select=1
+#PBS -l walltime=03:00:00
+#PBS -l place=scatter:excl
+#PBS -A ds007
+#PBS -j oe
+
+export nodecnt=`qstat -f $PBS_JOBID | awk '/Resource_List.nodect/ {print $3}'`
+export corespn=24
+export corecnt=`expr ${nodecnt} \* ${corespn}`
+
+export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
+cd $PBS_O_WORKDIR
+
+module load intel-tools-18
+
+export RAMSES_HOME=/home/ds007/ds007/dc-bare2/ramses
+export RAMSES_RUN_DIR=$RAMSES_HOME/runs/strong/n$nodecnt
+export OMP_NUM_THREADS=1
+
+mpirun -n $corecnt -ppn $corespn $RAMSES_HOME/bin/ramses3d $RAMSES_RUN_DIR/params.nml

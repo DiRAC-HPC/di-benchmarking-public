@@ -1,0 +1,68 @@
+# Instructions for setting up a Ramses working area on cosma7.
+
+
+# Login to a local machine that has an internet browser.
+# Browse to "https://datasync.ed.ac.uk/index.php/s/qWhVggTFEOGxEH3", the password is "dirac3bm".
+# Download all the cosmo3d-IC archive files to home folder on local machine.
+# Start terminal session on local machine.
+# Upload the archives files to home folder on cosma7.
+scp ~/cosmo3d-IC-*.tar.gz <username>@login7.cosma.dur.ac.uk:~/
+# Delete archive files from local machine
+rm ~/cosmo3d-IC-*
+
+
+# login to cosma7
+ssh <username>@login7.cosma.dur.ac.uk
+
+# setup work area
+export WORK=/path/to/work/dir
+cd $WORK
+
+
+# Extract the RAMSES files from di-benchmarking github repository
+#######################################################################################
+git clone https://github.com/DiRAC-HPC/di-benchmarking.git
+mv $WORK/di-benchmarking/RAMSES $WORK/
+rm -rf $WORK/di-benchmarking
+#######################################################################################
+
+
+# Setup ramses build folder and create directories for required benchmark runs.
+#######################################################################################
+cp -r $WORK/RAMSES/src $WORK/ramses
+mkdir -p $WORK/ramses/runs
+#######################################################################################
+
+
+# Expand initial condition (IC) files.
+#######################################################################################
+mv ~/cosmo3d-IC-*.tar.gz $WORK/ramses/runs/
+cd $WORK/ramses/runs
+tar -xvzf cosmo3d-IC-256.tar.gz
+tar -xvzf cosmo3d-IC-322.tar.gz
+tar -xvzf cosmo3d-IC-406.tar.gz
+tar -xvzf cosmo3d-IC-512.tar.gz
+tar -xvzf cosmo3d-IC-645.tar.gz
+rm cosmo3d-IC-*.tar.gz
+cd $WORK
+#######################################################################################
+
+
+# Copy the submission scripts and supporting files required for the scaling runs.
+################################################################################################
+cp -r $WORK/RAMSES/results/cosma7/strong $WORK/ramses/runs/
+cp -r $WORK/RAMSES/results/cosma7/weak $WORK/ramses/runs/
+
+# delete previously committed results
+rm -rf $WORK/ramses/runs/strong/*/ramses*
+rm -rf $WORK/ramses/runs/weak/*/ramses*
+################################################################################################
+
+
+# copy performance analysis python scripts to runs folder
+cp $WORK/RAMSES/analysis/get_performance_metric.py $WORK/ramses/runs/
+cp $WORK/RAMSES/analysis/summarise_performance_data.sh $WORK/ramses/runs/
+
+
+# delete remaining cloned RAMSES files
+rm -rf $WORK/RAMSES

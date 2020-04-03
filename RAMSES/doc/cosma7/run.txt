@@ -1,0 +1,103 @@
+# Instructions for running the Ramses benchmarks on cosma7.
+#
+# These instructions assume that you have previously run the init and make instructions
+# (see "init.txt" and "make.txt"), i.e., you have already cloned from "https://github.com/DiRAC-HPC/di-benchmarking.git",
+# and you have built the ramses3d binary.
+
+
+# login to cosma7
+ssh <username>@login7.cosma.dur.ac.uk
+
+# move to work area
+export WORK=/path/to/work/dir
+cd $WORK/ramses/runs
+
+
+# Run the strong scaling benchmarks.
+################################################################################################
+
+# The strong scaling benchmarks use the low resolution IC_256 initial conditions.
+
+cd $WORK/ramses/runs/strong/n1
+
+# Edit "submit.ll" such that "RAMSES_HOME" and "#SBATCH -A" are set appropriately.
+
+# run the single-node strong-scaling benchmark
+sbatch submit.ll
+
+# The single-node benchmark should take around 10 minutes to run and the ramses output file
+# should be written to "$WORK/ramses/runs/strong/n1".
+
+# run the 2-node strong-scaling benchmark
+cd $WORK/ramses/runs/strong/n2
+# edit "submit.ll" as before
+sbatch submit.ll
+
+# run the 4-node strong-scaling benchmark
+cd $WORK/ramses/runs/strong/n4
+# edit "submit.ll" as before
+sbatch submit.ll
+
+# run the 8-node strong-scaling benchmark
+cd $WORK/ramses/runs/strong/n8
+# edit "submit.ll" as before
+sbatch submit.ll
+
+# run the 16-node strong-scaling benchmark
+cd $WORK/ramses/runs/strong/n16
+# edit "submit.ll" as before
+sbatch submit.ll
+################################################################################################
+
+
+# Run the weak scaling benchmarks.
+################################################################################################
+# The weak scaling benchmarks run the cosmo3d case using different resolution IC files.
+# IC_256 on 1 node.
+# IC_322 on 2 nodes.
+# IC_406 on 4 nodes.
+# IC_512 on 8 nodes.
+# IC_645 on 16 nodes.
+
+cd $WORK/ramses/runs/weak/n1
+
+# Edit "submit.ll" as for the strong scaling runs.
+
+# run the single-node weak-scaling benchmark
+sbatch submit.ll
+
+# The single-node benchmark should take around 10 minutes to run and the ramses output file
+# should be written to "$WORK/ramses/runs/weak/n1".
+
+# run the 2-node weak-scaling benchmark
+cd $WORK/ramses/runs/weak/n2
+# edit the "submit.ll" as before
+sbatch submit.ll
+
+# run the 4-node weak-scaling benchmark
+cd $WORK/ramses/runs/weak/n4
+# edit the "submit.ll" as before
+sbatch submit.ll
+
+# run the 8-node weak-scaling benchmark
+cd $WORK/ramses/runs/weak/n8
+# edit the "submit.ll" as before
+sbatch submit.ll
+
+# run the 16-node weak-scaling benchmark
+cd $WORK/ramses/runs/weak/n16
+# edit the "submit.ll" as before
+sbatch submit.ll
+################################################################################################
+
+
+# Collect scaling results into summary files.
+################################################################################################
+cd $WORK/ramses/runs
+
+# Running "get_performance_metric.py" requires at least Python 2.7.5.
+
+python get_performance_metric.py ramses ./strong/n\*/ramses\* -1 > ./strong/summary.txt
+
+python get_performance_metric.py ramses ./weak/n\*/ramses\* -1 > ./weak/summary.txt
+################################################################################################

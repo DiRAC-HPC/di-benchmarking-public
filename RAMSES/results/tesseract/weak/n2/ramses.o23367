@@ -1,0 +1,795 @@
+ _/_/_/       _/_/     _/    _/    _/_/_/   _/_/_/_/    _/_/_/  
+ _/    _/    _/  _/    _/_/_/_/   _/    _/  _/         _/    _/ 
+ _/    _/   _/    _/   _/ _/ _/   _/        _/         _/       
+ _/_/_/     _/_/_/_/   _/    _/     _/_/    _/_/_/       _/_/   
+ _/    _/   _/    _/   _/    _/         _/  _/               _/ 
+ _/    _/   _/    _/   _/    _/   _/    _/  _/         _/    _/ 
+ _/    _/   _/    _/   _/    _/    _/_/_/   _/_/_/_/    _/_/_/  
+                         Version 3.0                            
+        written by Romain Teyssier (University of Zurich)       
+                (c) CEA 1999-2007, UZH 2008-2014                
+  
+ Working with nproc =   48 for ndim = 3
+ Using solver = hydro with nvar =  6
+  
+ compile date = 10/17/19-17:42:19
+ patch dir    = 
+ remote repo  = https://bitbucket.org/rteyssie/ramses
+ local branch = stable_18_09
+ last commit  = f2e60451f294f59a48af011940cc8977c87c9c93
+  
+__________________________________________________
+ Hydro var indices:
+    imetal   =            6
+__________________________________________________
+ Reading file ../../IC_322/ic_deltab
+ Cosmological parameters:
+ aexp= 9.047E-03 H0= 6.780E+01 km s-1 Mpc-1
+ omega_m=  0.308 omega_l=  0.692 omega_b=  0.045
+ box size= 5.390E+01 h-1 Mpc
+ Initial conditions for level =   8
+ dx= 2.106E-01 h-1 Mpc
+ n1= 322 n2= 322 n3= 322
+ xoff= 0.000E+00 yoff= 0.000E+00 zoff= 0.000E+00 h-1 Mpc
+ Computing Friedman model
+ Computing cooling model
+ Starting with T/mu (K) =    158.187764526260     
+ Building initial AMR grid
+ Reading file ../../IC_322/ic_deltab
+ Reading file ../../IC_322/ic_velcx
+ Reading file ../../IC_322/ic_velcy
+ Reading file ../../IC_322/ic_velcz
+ File ../../IC_322/ic_tempb not found
+ Initialize corresponding variable to default value
+ File ../../IC_322/ic_pvar_00001 not found
+ Initialize corresponding variable to default value
+ WARNING: NEVER USE FAMILY CODES / TAGS > 127.
+ See https://bitbucket.org/rteyssie/ramses/wiki/Particle%20Families
+ Reading file ../../IC_322/ic_velcx
+ Reading file ../../IC_322/ic_velcy
+ Reading file ../../IC_322/ic_velcz
+ npart=      349529 /     1400000  for PE=           1
+ npart=      349537 /     1400000  for PE=          17
+ npart=      349529 /     1400000  for PE=          33
+ npart=      349529 /     1400000  for PE=          23
+ npart=      349601 /     1400000  for PE=           5
+ npart=      349521 /     1400000  for PE=           6
+ npart=      349529 /     1400000  for PE=           7
+ npart=      349529 /     1400000  for PE=          21
+ npart=      349521 /     1400000  for PE=          22
+ npart=      350447 /     1400000  for PE=          39
+ npart=      349554 /     1400000  for PE=          37
+ npart=      351203 /     1400000  for PE=          38
+ npart=      349529 /     1400000  for PE=          13
+ npart=      349521 /     1400000  for PE=          18
+ npart=      349756 /     1400000  for PE=          24
+ npart=      349529 /     1400000  for PE=          15
+ npart=      349529 /     1400000  for PE=          27
+ npart=      349529 /     1400000  for PE=          29
+ npart=      349559 /     1400000  for PE=           4
+ npart=      349521 /     1400000  for PE=           2
+ npart=      349667 /     1400000  for PE=           8
+ npart=      349521 /     1400000  for PE=          31
+ npart=      349521 /     1400000  for PE=          12
+ npart=      349747 /     1400000  for PE=          43
+ npart=      349521 /     1400000  for PE=          45
+ npart=      349521 /     1400000  for PE=          16
+ npart=      349529 /     1400000  for PE=          25
+ npart=      350746 /     1400000  for PE=          19
+ npart=      349980 /     1400000  for PE=          14
+ npart=      349521 /     1400000  for PE=          26
+ npart=      349521 /     1400000  for PE=          20
+ npart=      349529 /     1400000  for PE=          34
+ npart=      352554 /     1400000  for PE=          40
+ npart=      349521 /     1400000  for PE=          47
+ npart=      349521 /     1400000  for PE=          28
+ npart=      350537 /     1400000  for PE=          11
+ npart=      349529 /     1400000  for PE=          32
+ npart=      352644 /     1400000  for PE=           9
+ npart=      351819 /     1400000  for PE=          35
+ npart=      349529 /     1400000  for PE=          30
+ npart=      350460 /     1400000  for PE=          10
+ npart=      349705 /     1400000  for PE=          36
+ npart=      349537 /     1400000  for PE=          44
+ npart=      349642 /     1400000  for PE=          48
+ npart=      349521 /     1400000  for PE=          41
+ npart=      349529 /     1400000  for PE=           3
+ npart=      349529 /     1400000  for PE=          46
+ npart=      349529 /     1400000  for PE=          42
+ Time elapsed since startup:   7.39909195899963     
+ Initial mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     683,     682,)
+ Level  7 has     262144 grids (    5460,    5462,    5461,)
+ Level  8 has    2097152 grids (   43690,   43692,   43690,)
+ Starting time integration
+ Load balancing AMR grid...
+   ==> Level=    8 Step=    4 Error= 8.979E-05
+ Fine step=      0 t=-3.37754E+01 dt= 1.894E+00 a= 9.047E-03 mem= 9.0% 25.2%
+ Computing new cooling table
+ Time elapsed since last coarse step:    6.74 s       19.27 mus/pt       19.27 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   14.14000     s
+   ==> Level=    8 Step=    4 Error= 8.963E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=      1 mcons= 0.00E+00 econs= 0.00E+00 epot=-6.75E-09 ekin= 5.11E-09 eint= 1.09E-11
+ Fine step=      1 t=-3.18810E+01 dt= 1.800E+00 a= 1.002E-02 mem= 9.0% 25.2%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.75 s       13.59 mus/pt       13.59 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   18.89000     s
+   ==> Level=    8 Step=    4 Error= 8.952E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=      2 mcons= 3.80E-16 econs= 1.71E-03 epot=-9.21E-09 ekin= 6.78E-09 eint= 1.34E-11
+ Fine step=      2 t=-3.00813E+01 dt= 1.710E+00 a= 1.111E-02 mem= 9.0% 25.4%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.67 s       13.37 mus/pt       13.48 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   23.56000     s
+   ==> Level=    8 Step=    4 Error= 8.945E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=      3 mcons= 2.66E-15 econs= 3.02E-03 epot=-1.26E-08 ekin= 9.04E-09 eint= 1.65E-11
+ Fine step=      3 t=-2.83716E+01 dt= 1.624E+00 a= 1.231E-02 mem= 9.0% 25.5%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.25 s       12.17 mus/pt       13.04 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   27.81000     s
+   ==> Level=    8 Step=    4 Error= 8.942E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=      4 mcons= 1.14E-15 econs= 4.02E-03 epot=-1.71E-08 ekin= 1.21E-08 eint= 2.04E-11
+ Fine step=      4 t=-2.67474E+01 dt= 1.543E+00 a= 1.364E-02 mem= 9.0% 25.7%
+ Computing new cooling table
+ Time elapsed since last coarse step:    3.95 s       11.30 mus/pt       12.61 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   31.76000     s
+   ==> Level=    8 Step=    4 Error= 8.942E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=      5 mcons= 1.90E-15 econs= 4.76E-03 epot=-2.33E-08 ekin= 1.63E-08 eint= 2.51E-11
+ Fine step=      5 t=-2.52044E+01 dt= 1.466E+00 a= 1.511E-02 mem= 9.0% 25.9%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.77 s       13.66 mus/pt       12.82 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   36.54000     s
+   ==> Level=    8 Step=    4 Error= 8.946E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=      6 mcons= 1.90E-15 econs= 5.32E-03 epot=-3.17E-08 ekin= 2.20E-08 eint= 3.09E-11
+ Fine step=      6 t=-2.37385E+01 dt= 1.393E+00 a= 1.674E-02 mem= 9.0% 26.0%
+ Computing new cooling table
+ Time elapsed since last coarse step:    3.80 s       10.88 mus/pt       12.49 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   40.34000     s
+   ==> Level=    8 Step=    4 Error= 8.951E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=      7 mcons= 1.90E-15 econs= 5.74E-03 epot=-4.32E-08 ekin= 2.97E-08 eint= 3.81E-11
+ Fine step=      7 t=-2.23459E+01 dt= 1.323E+00 a= 1.855E-02 mem= 9.0% 26.1%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.28 s       12.23 mus/pt       12.46 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   44.61000     s
+   ==> Level=    8 Step=    4 Error= 8.959E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=      8 mcons= 3.23E-15 econs= 6.04E-03 epot=-5.88E-08 ekin= 4.02E-08 eint= 4.71E-11
+ Fine step=      8 t=-2.10230E+01 dt= 1.257E+00 a= 2.056E-02 mem= 9.0% 26.2%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.26 s       12.19 mus/pt       12.42 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   48.87000     s
+   ==> Level=    8 Step=    4 Error= 8.969E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=      9 mcons= 3.80E-15 econs= 6.26E-03 epot=-8.00E-08 ekin= 5.45E-08 eint= 5.84E-11
+ Fine step=      9 t=-1.97662E+01 dt= 1.194E+00 a= 2.278E-02 mem= 9.0% 26.3%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.27 s       12.21 mus/pt       12.40 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   53.14000     s
+   ==> Level=    8 Step=    4 Error= 8.979E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=     10 mcons= 5.70E-15 econs= 6.41E-03 epot=-1.09E-07 ekin= 7.40E-08 eint= 7.28E-11
+ Fine step=     10 t=-1.85723E+01 dt= 1.134E+00 a= 2.524E-02 mem= 9.0% 26.4%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.78 s       13.68 mus/pt       12.53 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   57.92000     s
+   ==> Level=    8 Step=    4 Error= 8.988E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=     11 mcons= 7.60E-16 econs= 6.51E-03 epot=-1.48E-07 ekin= 1.00E-07 eint= 9.12E-11
+ Fine step=     11 t=-1.74380E+01 dt= 1.078E+00 a= 2.796E-02 mem= 9.0% 26.6%
+ Computing new cooling table
+ Time elapsed since last coarse step:    3.80 s       10.87 mus/pt       12.38 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   61.72000     s
+   ==> Level=    8 Step=    4 Error= 8.999E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Main step=     12 mcons= 3.04E-15 econs= 6.59E-03 epot=-2.02E-07 ekin= 1.36E-07 eint= 1.15E-10
+ Fine step=     12 t=-1.63605E+01 dt= 1.024E+00 a= 3.098E-02 mem= 9.0% 26.8%
+ Computing new cooling table
+ Time elapsed since last coarse step:    3.60 s       10.31 mus/pt       12.20 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   65.33000     s
+   ==> Level=    8 Step=    4 Error= 9.009E-05
+   ==> Level=    9 Step=    4 Error= 3.915E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Level  9 has        160 grids (       0,      98,       3,)
+ Main step=     13 mcons= 3.04E-15 econs= 6.65E-03 epot=-2.74E-07 ekin= 1.85E-07 eint= 1.47E-10
+ Fine step=     13 t=-1.53369E+01 dt= 7.113E-01 a= 3.433E-02 mem= 9.0% 27.3%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.00 s       11.46 mus/pt       12.15 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   69.33000     s
+   ==> Level=    8 Step=    4 Error= 9.017E-05
+   ==> Level=    9 Step=    4 Error= 2.621E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Level  9 has       1059 grids (       0,     370,      22,)
+ Main step=     14 mcons= 9.50E-16 econs= 6.03E-03 epot=-3.43E-07 ekin= 2.32E-07 eint= 1.74E-10
+ Fine step=     14 t=-1.46255E+01 dt= 5.214E-01 a= 3.699E-02 mem= 9.0% 27.5%
+ Computing new cooling table
+ Time elapsed since last coarse step:    3.51 s       10.04 mus/pt       12.00 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   72.84000     s
+   ==> Level=    8 Step=    4 Error= 9.024E-05
+   ==> Level=    9 Step=    4 Error= 2.281E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Level  9 has       2320 grids (       0,     731,      48,)
+ Main step=     15 mcons= 2.28E-15 econs= 5.41E-03 epot=-4.07E-07 ekin= 2.74E-07 eint= 1.98E-10
+ Fine step=     15 t=-1.41041E+01 dt= 4.798E-01 a= 3.913E-02 mem= 9.1% 27.6%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.93 s       14.09 mus/pt       12.14 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   77.77000     s
+   ==> Level=    8 Step=    4 Error= 9.030E-05
+   ==> Level=    9 Step=    4 Error= 2.235E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Level  9 has       3662 grids (       0,    1134,      76,)
+ Main step=     16 mcons= 3.23E-15 econs= 4.88E-03 epot=-4.78E-07 ekin= 3.22E-07 eint= 2.23E-10
+ Fine step=     16 t=-1.36243E+01 dt= 4.435E-01 a= 4.128E-02 mem= 9.2% 27.7%
+ Computing new cooling table
+ Time elapsed since last coarse step:    3.82 s       10.92 mus/pt       12.06 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   81.59000     s
+   ==> Level=    8 Step=    4 Error= 9.036E-05
+   ==> Level=    9 Step=    4 Error= 2.201E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Level  9 has       5439 grids (       0,    1521,     113,)
+ Main step=     17 mcons= 4.94E-15 econs= 4.42E-03 epot=-5.57E-07 ekin= 3.74E-07 eint= 2.52E-10
+ Fine step=     17 t=-1.31808E+01 dt= 4.101E-01 a= 4.343E-02 mem= 9.2% 27.9%
+ Computing new cooling table
+ Time elapsed since last coarse step:    3.76 s       10.75 mus/pt       11.98 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   85.36000     s
+   ==> Level=    8 Step=    4 Error= 9.042E-05
+   ==> Level=    9 Step=    4 Error= 2.165E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Level  9 has       7253 grids (       0,    2026,     151,)
+ Main step=     18 mcons= 2.28E-15 econs= 4.02E-03 epot=-6.43E-07 ekin= 4.32E-07 eint= 2.82E-10
+ Fine step=     18 t=-1.27707E+01 dt= 3.810E-01 a= 4.556E-02 mem= 9.3% 28.0%
+ Computing new cooling table
+ Time elapsed since last coarse step:    3.51 s       10.02 mus/pt       11.87 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   88.87000     s
+   ==> Level=    8 Step=    4 Error= 9.047E-05
+   ==> Level=    9 Step=    4 Error= 2.117E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      84,      86,      85,)
+ Level  6 has      32768 grids (     682,     684,     682,)
+ Level  7 has     262144 grids (    5457,    5465,    5461,)
+ Level  8 has    2097152 grids (   43654,   43721,   43690,)
+ Level  9 has       9372 grids (       0,    2550,     195,)
+ Main step=     19 mcons= 5.70E-16 econs= 3.67E-03 epot=-7.38E-07 ekin= 4.96E-07 eint= 3.15E-10
+ Fine step=     19 t=-1.23897E+01 dt= 3.546E-01 a= 4.769E-02 mem= 9.4% 28.2%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.07 s       11.59 mus/pt       11.86 mus/pt (av)
+ Used memory:    1.188 GB
+ Total running time:   92.93999     s
+ Load balancing AMR grid...
+   ==> Level=    8 Step=    4 Error= 9.051E-05
+   ==> Level=    9 Step=    4 Error= 2.118E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      11936 grids (       0,    3180,     248,)
+ Main step=     20 mcons= 1.52E-15 econs= 3.36E-03 epot=-8.41E-07 ekin= 5.65E-07 eint= 3.50E-10
+ Fine step=     20 t=-1.20352E+01 dt= 3.302E-01 a= 4.981E-02 mem= 9.9% 27.4%
+ Computing new cooling table
+ Time elapsed since last coarse step:    6.06 s       17.25 mus/pt       12.13 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   99.00000     s
+   ==> Level=    8 Step=    4 Error= 9.055E-05
+   ==> Level=    9 Step=    4 Error= 2.137E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      15063 grids (       0,    3705,     313,)
+ Main step=     21 mcons= 2.09E-15 econs= 3.09E-03 epot=-9.52E-07 ekin= 6.39E-07 eint= 3.89E-10
+ Fine step=     21 t=-1.17050E+01 dt= 3.090E-01 a= 5.191E-02 mem= 9.7% 27.5%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.03 s       11.45 mus/pt       12.10 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   103.0300     s
+   ==> Level=    8 Step=    4 Error= 9.059E-05
+   ==> Level=    9 Step=    4 Error= 2.124E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      18993 grids (       0,    4239,     395,)
+ Main step=     22 mcons= 2.47E-15 econs= 2.85E-03 epot=-1.07E-06 ekin= 7.20E-07 eint= 4.29E-10
+ Fine step=     22 t=-1.13960E+01 dt= 2.908E-01 a= 5.400E-02 mem= 9.7% 27.6%
+ Computing new cooling table
+ Time elapsed since last coarse step:    3.42 s        9.71 mus/pt       11.99 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   106.4500     s
+   ==> Level=    8 Step=    4 Error= 9.063E-05
+   ==> Level=    9 Step=    4 Error= 2.089E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      23888 grids (       0,    4959,     497,)
+ Main step=     23 mcons= 3.80E-16 econs= 2.64E-03 epot=-1.20E-06 ekin= 8.06E-07 eint= 4.73E-10
+ Fine step=     23 t=-1.11052E+01 dt= 2.728E-01 a= 5.608E-02 mem= 9.7% 27.7%
+ Computing new cooling table
+ Time elapsed since last coarse step:    3.87 s       10.97 mus/pt       11.94 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   110.3200     s
+   ==> Level=    8 Step=    4 Error= 9.065E-05
+   ==> Level=    9 Step=    4 Error= 2.127E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      29443 grids (       0,    5604,     613,)
+ Main step=     24 mcons= 3.80E-16 econs= 2.45E-03 epot=-1.34E-06 ekin= 8.99E-07 eint= 5.20E-10
+ Fine step=     24 t=-1.08324E+01 dt= 2.566E-01 a= 5.815E-02 mem= 9.7% 27.8%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.15 s       11.72 mus/pt       11.93 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   114.4700     s
+   ==> Level=    8 Step=    4 Error= 9.068E-05
+   ==> Level=    9 Step=    4 Error= 2.222E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      36587 grids (       0,    6458,     762,)
+ Main step=     25 mcons= 4.37E-15 econs= 2.28E-03 epot=-1.49E-06 ekin= 9.98E-07 eint= 5.70E-10
+ Fine step=     25 t=-1.05758E+01 dt= 2.429E-01 a= 6.020E-02 mem= 9.8% 27.9%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.45 s       12.54 mus/pt       11.96 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   118.9200     s
+   ==> Level=    8 Step=    4 Error= 9.070E-05
+   ==> Level=    9 Step=    4 Error= 2.286E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      44631 grids (       0,    7285,     929,)
+ Main step=     26 mcons= 3.61E-15 econs= 2.12E-03 epot=-1.65E-06 ekin= 1.10E-06 eint= 6.24E-10
+ Fine step=     26 t=-1.03329E+01 dt= 2.301E-01 a= 6.224E-02 mem= 9.9% 28.0%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.05 s       11.38 mus/pt       11.94 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   122.9700     s
+   ==> Level=    8 Step=    4 Error= 9.071E-05
+   ==> Level=    9 Step=    4 Error= 2.290E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      54402 grids (       0,    8183,    1133,)
+ Main step=     27 mcons= 1.52E-15 econs= 1.98E-03 epot=-1.81E-06 ekin= 1.22E-06 eint= 6.81E-10
+ Fine step=     27 t=-1.01028E+01 dt= 2.192E-01 a= 6.427E-02 mem=10.1% 28.1%
+ Computing new cooling table
+ Time elapsed since last coarse step:    6.01 s       16.81 mus/pt       12.12 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   128.9800     s
+   ==> Level=    8 Step=    4 Error= 9.072E-05
+   ==> Level=    9 Step=    4 Error= 2.329E-05
+   ==> Level=   10 Step=    4 Error= 1.608E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      65651 grids (       0,    9281,    1367,)
+ Level 10 has         27 grids (       0,      27,       0,)
+ Main step=     28 mcons= 3.61E-15 econs= 1.86E-03 epot=-1.99E-06 ekin= 1.33E-06 eint= 7.41E-10
+ Fine step=     28 t=-9.88361E+00 dt= 1.053E-01 a= 6.630E-02 mem=10.2% 28.2%
+   ==> Level=   10 Step=    4 Error= 1.604E-05
+ Fine step=     29 t=-9.77836E+00 dt= 1.053E-01 a= 6.731E-02 mem=10.2% 28.2%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.02 s       11.19 mus/pt       12.08 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   133.0000     s
+   ==> Level=    8 Step=    4 Error= 9.073E-05
+   ==> Level=    9 Step=    4 Error= 2.425E-05
+   ==> Level=   10 Step=    4 Error= 1.759E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      79469 grids (      57,   10116,    1655,)
+ Level 10 has         27 grids (       0,      27,       0,)
+ Main step=     29 mcons= 2.66E-15 econs= 1.74E-03 epot=-2.18E-06 ekin= 1.46E-06 eint= 8.07E-10
+ Fine step=     30 t=-9.67311E+00 dt= 1.004E-01 a= 6.834E-02 mem=10.4% 28.3%
+   ==> Level=   10 Step=    4 Error= 1.855E-05
+ Fine step=     31 t=-9.57267E+00 dt= 1.004E-01 a= 6.935E-02 mem=10.4% 28.3%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.19 s       11.60 mus/pt       12.07 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   137.1900     s
+   ==> Level=    8 Step=    4 Error= 9.073E-05
+   ==> Level=    9 Step=    4 Error= 2.485E-05
+   ==> Level=   10 Step=    4 Error= 1.890E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has      94827 grids (     149,   11105,    1975,)
+ Level 10 has         80 grids (       0,      70,       1,)
+ Main step=     30 mcons= 1.52E-15 econs= 1.64E-03 epot=-2.38E-06 ekin= 1.60E-06 eint= 8.76E-10
+ Fine step=     32 t=-9.47223E+00 dt= 9.542E-02 a= 7.038E-02 mem=10.5% 28.5%
+   ==> Level=   10 Step=    4 Error= 1.885E-05
+ Fine step=     33 t=-9.37681E+00 dt= 9.542E-02 a= 7.138E-02 mem=10.5% 28.5%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.42 s       12.17 mus/pt       12.07 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   141.6100     s
+   ==> Level=    8 Step=    4 Error= 9.073E-05
+   ==> Level=    9 Step=    4 Error= 2.594E-05
+   ==> Level=   10 Step=    4 Error= 2.991E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has     112144 grids (     168,   12377,    2336,)
+ Level 10 has        149 grids (       0,     111,       3,)
+ Main step=     31 mcons= 1.71E-15 econs= 1.54E-03 epot=-2.60E-06 ekin= 1.74E-06 eint= 9.43E-10
+ Fine step=     34 t=-9.28140E+00 dt= 9.101E-02 a= 7.240E-02 mem=10.7% 28.6%
+   ==> Level=   10 Step=    4 Error= 2.944E-05
+ Fine step=     35 t=-9.19039E+00 dt= 9.101E-02 a= 7.339E-02 mem=10.7% 28.6%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.35 s       11.88 mus/pt       12.06 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   145.9600     s
+   ==> Level=    8 Step=    4 Error= 9.072E-05
+   ==> Level=    9 Step=    4 Error= 2.655E-05
+   ==> Level=   10 Step=    4 Error= 2.746E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has     132247 grids (     241,   13994,    2755,)
+ Level 10 has        435 grids (       0,     173,       9,)
+ Main step=     32 mcons= 9.50E-16 econs= 1.45E-03 epot=-2.82E-06 ekin= 1.89E-06 eint= 1.01E-09
+ Fine step=     36 t=-9.09938E+00 dt= 8.639E-02 a= 7.441E-02 mem=11.0% 28.7%
+   ==> Level=   10 Step=    4 Error= 2.755E-05
+ Fine step=     37 t=-9.01299E+00 dt= 7.276E-02 a= 7.539E-02 mem=11.0% 28.7%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.23 s       11.48 mus/pt       12.05 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   150.1900     s
+   ==> Level=    8 Step=    4 Error= 9.071E-05
+   ==> Level=    9 Step=    4 Error= 2.720E-05
+   ==> Level=   10 Step=    4 Error= 2.724E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has     154120 grids (     337,   15470,    3210,)
+ Level 10 has        701 grids (       0,     249,      14,)
+ Main step=     33 mcons= 4.37E-15 econs= 1.36E-03 epot=-3.04E-06 ekin= 2.03E-06 eint= 1.08E-09
+ Fine step=     38 t=-8.94023E+00 dt= 7.095E-02 a= 7.624E-02 mem=11.2% 28.8%
+   ==> Level=   10 Step=    4 Error= 2.676E-05
+ Fine step=     39 t=-8.86928E+00 dt= 6.889E-02 a= 7.707E-02 mem=11.2% 28.8%
+ Computing new cooling table
+ Time elapsed since last coarse step:    4.83 s       12.99 mus/pt       12.07 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   155.0300     s
+   ==> Level=    8 Step=    4 Error= 9.070E-05
+   ==> Level=    9 Step=    4 Error= 2.784E-05
+   ==> Level=   10 Step=    4 Error= 2.763E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has     176440 grids (     370,   17017,    3675,)
+ Level 10 has       1054 grids (       0,     364,      21,)
+ Main step=     34 mcons= 1.14E-15 econs= 1.29E-03 epot=-3.24E-06 ekin= 2.17E-06 eint= 1.14E-09
+ Fine step=     40 t=-8.80038E+00 dt= 6.771E-02 a= 7.790E-02 mem=11.5% 28.9%
+   ==> Level=   10 Step=    4 Error= 2.686E-05
+ Fine step=     41 t=-8.73267E+00 dt= 6.757E-02 a= 7.872E-02 mem=11.5% 28.9%
+ Computing new cooling table
+ Time elapsed since last coarse step:    5.00 s       13.31 mus/pt       12.11 mus/pt (av)
+ Used memory:    1.191 GB
+ Total running time:   160.0300     s
+   ==> Level=    8 Step=    4 Error= 9.068E-05
+   ==> Level=    9 Step=    4 Error= 2.858E-05
+   ==> Level=   10 Step=    4 Error= 2.600E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has     198065 grids (     418,   18158,    4126,)
+ Level 10 has       1326 grids (       0,     403,      27,)
+ Main step=     35 mcons= 9.50E-16 econs= 1.22E-03 epot=-3.45E-06 ekin= 2.31E-06 eint= 1.20E-09
+ Fine step=     42 t=-8.66510E+00 dt= 6.687E-02 a= 7.956E-02 mem=11.7% 29.0%
+   ==> Level=   10 Step=    4 Error= 2.522E-05
+ Fine step=     43 t=-8.59822E+00 dt= 6.560E-02 a= 8.040E-02 mem=11.7% 29.0%
+ Computing new cooling table
+ Time elapsed since last coarse step:    5.11 s       13.50 mus/pt       12.15 mus/pt (av)
+ Used memory:    1.192 GB
+ Total running time:   165.1400     s
+   ==> Level=    8 Step=    4 Error= 9.066E-05
+   ==> Level=    9 Step=    4 Error= 2.950E-05
+   ==> Level=   10 Step=    4 Error= 2.891E-05
+   ==> Level=   11 Step=    4 Error= 1.383E-05
+ Mesh structure
+ Level  1 has          1 grids (       0,       1,       0,)
+ Level  2 has          8 grids (       0,       1,       0,)
+ Level  3 has         64 grids (       1,       2,       1,)
+ Level  4 has        512 grids (      10,      12,      10,)
+ Level  5 has       4096 grids (      81,      87,      85,)
+ Level  6 has      32768 grids (     639,     691,     682,)
+ Level  7 has     262144 grids (    5113,    5533,    5461,)
+ Level  8 has    2097152 grids (   40908,   44270,   43690,)
+ Level  9 has     221603 grids (     478,   19336,    4616,)
+ Level 10 has       2264 grids (       0,     722,      47,)
+ Level 11 has         54 grids (       0,      54,       1,)
+ Main step=     36 mcons= 7.60E-16 econs= 1.15E-03 epot=-3.68E-06 ekin= 2.46E-06 eint= 1.27E-09
+ Fine step=     44 t=-8.53262E+00 dt= 3.234E-02 a= 8.123E-02 mem=11.9% 29.1%
+ Run completed
+ Total elapsed time:   158.729043960571     
+ --------------------------------------------------------------------
+
+     minimum       average       maximum  standard dev        std/av       %   rmn   rmx  TIMER
+       2.275         2.284         2.290         0.003         0.001     1.4     9  44    coarse levels           
+       2.209         2.214         2.222         0.003         0.001     1.4    23  37    refine                  
+       3.516         3.516         3.516         0.000         0.000     2.2    13  22    load balance            
+       8.217         8.922        10.161         0.469         0.053     5.5    46  23    particles               
+       4.014         4.014         4.035         0.003         0.001     2.5    40   1    io                      
+       2.232         4.372         6.775         0.800         0.183     2.7     9  47    feedback                
+      33.806        34.252        34.590         0.191         0.006    21.2    23  21    poisson                 
+       6.689         6.800         6.921         0.056         0.008     4.2    28  46    rho                     
+       1.230         1.315         1.426         0.047         0.036     0.8    45  36    courant                 
+       0.212         0.234         0.313         0.026         0.113     0.1     2  22    hydro - set unew        
+      41.588        44.737        49.870         2.043         0.046    27.7     2  23    hydro - godunov         
+       4.870        10.280        13.469         2.030         0.197     6.4    22   3    hydro - rev ghostzones  
+       0.988         1.052         1.245         0.068         0.065     0.7     2  22    hydro - set uold        
+      35.034        35.595        36.901         0.278         0.008    22.0    22   9    cooling                 
+       0.243         0.318         0.338         0.022         0.069     0.2    22  41    hydro - ghostzones      
+       1.672         1.736         1.773         0.026         0.015     1.1    36  16    flag                    
+     161.672     100.0    TOTAL
