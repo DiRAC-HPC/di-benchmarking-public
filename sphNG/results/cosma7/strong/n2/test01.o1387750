@@ -1,0 +1,3606 @@
+ **********************************************
+ *                                            *
+ *            sphNG - 3 D - RT - MHD          *
+ *              WITH POINT MASSES             *
+ *                                            *
+ **********************************************
+
+ Current version : -7006c3b-dirty      
+ Built           :  Sep 24 2019    11:48:40
+                   RUNNING WITH BINARY TREE
+ Compiled using MPI
+ Running with    14 MPI processes
+ Compiled using openMP
+ Running with     4 openMP threads
+
+
+ SPH run test01               is running option : evolution  
+ Started on : 24/ 9/2019 at 12 h.  3 min. 50 sec. 
+
+ SPH Kernel : M4 cubic with hfact = 1.20
+
+ Random seed:        -4357
+
+
+ The computations are done in the following units
+ units of :  mass       :  1.9910D+33   distance    :  3.0860E+17
+             density    :  6.7746E-20   time        :  1.4874E+13
+             velocity   :  2.0748E+04   energy/mass :  4.3046E+08
+             ang. mom.  :  1.2748E+55   mag field   :  1.9143E-05
+
+
+ Variable of state used : density and specific internal energy           
+
+
+ idim                           :    4001000
+ Total number of particles used :     105088
+ Number of active particles     :     105088
+ Total mass                     :  1.0000E+00
+ Distribution : object 1 :  number of particles :     105088
+                            mass of object      :   1.0000E+00
+                object 2 :  number of particles :          0
+                            mass of object      :   0.0000E+00
+
+
+ The free fall time is  :  1.4776745E+12
+ in computational units :  9.9345883E-02
+
+ The following options were set :
+ energy calculation     :        v
+ pressure gradients     :        1   self-gravity     :        1
+ artificial viscosity   :        6   coriolis         :        0
+ boundary type          :        3   external force   :        0
+ energy conservation    :        0   shock heating    :        0
+ homologous exp.        :        0   general damping  :      0.0
+
+ Gravity calculated using: Binary Tree
+                           Kernel Softening
+ Partial tree revision: 1
+
+
+ Boundary type : spherical reflective 
+          rmax :   0.200
+
+ gamma                :    1.667E+00
+
+ Mean molecular weight:    2.381E+00
+
+
+ Critical densities for changing gamma 
+           from   1.00    to   1.40    :    1.000E-13
+           from   1.40    to   1.00    :    1.000E-10
+           from   1.00    to   1.67    :    1.000E+00
+
+
+
+ Numerical constants used in this run :
+ artificial viscosity  alpha      :    1.000E-01
+                       beta       :    1.000E+00
+ binary tree accuracy param.      :    5.000E-01
+ RK2 tolerance - gas              :    1.000E-05
+               - point masses     :    1.000E-09
+               - smoothing length :    1.000E-05
+
+ 
+ Point mass creation NOT ALLOWED
+
+
+ Name of input file : TEST000
+
+
+ Integrator: Runga-Kutta-Fehlberg
+ 
+ nghost         1736
+ nghost         1719
+Dynamic time =  2.4836470500E-03 Step time =  2.48365E-03 Moved       7506
+Dynamic time =  3.1045588125E-03 Step time =  3.10456E-03 Moved        272
+ nghost         1719
+Dynamic time =  3.7254705750E-03 Step time =  3.72547E-03 Moved       1729
+Dynamic time =  4.3463823375E-03 Step time =  4.34638E-03 Moved        683
+ nghost         1707
+Dynamic time =  4.9672941000E-03 Step time =  4.96729E-03 Moved       7506
+ h too small         148  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          73
+ mean    no. density iterations   1.0557
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  56.1527
+ 
+Timestep distribution     105088 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       1381        102          0
+ 2  1.2418E-03      92412       6601          0
+ 3  6.2091E-04       9365        644          0
+ 4  3.1046E-04       1930        159          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   1.7   -    -    -   3.1   -    -    -    -    -    -    -    -    -   
+ 2    -   4.0   -    -    -   4.9   -    -    -    -    -    -    -    -    -   
+ 3    -   4.0   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 4    -   3.3   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE            0         120        7506
+ MOVE-POST         7506         120         120
+ nghost         1650
+ time used  :    0.033 min. , ghosts :      23480
+ TREE Timing:
+ step only    time:    0.033 min.  98.85 %
+ densityi     time:    0.024 min.  71.29 %
+  densit-1    time:    0.022 min.  92.31 %
+  densit-2    time:    0.002 min.   6.71 %
+  divv        time:    0.000 min.   1.61 %
+ forcei       time:    0.005 min.  15.05 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.00 %
+ step-6       time:    0.000 min.   0.05 %
+ step-7       time:    0.000 min.   0.00 %
+ step-8       time:    0.000 min.   0.00 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.00 %
+ step-15      time:    0.000 min.   0.25 %
+ insulate     time:    0.002 min.   6.58 %
+  TRE mtree   time:    0.002 min.  93.94 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   6.06 %
+  TRE    rt-1 time:    0.000 min.  87.50 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+ sort - mtree time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST001 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :    2/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  2.3089999999E+00
+ SIMTIME  :  4.9672941000E-03
+ Free Fall Time  :  4.9999999669E-02
+ General properties of system : 
+ total energy                       :   -1.71633E+00
+ kinetic energy                     :    7.70110E-02
+ rotational energy around z         :    7.16654E-02
+ rotational energy around x         :    1.83077E-02
+ potential energy                   :   -3.01013E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.77072E-02
+ total linear momentum              :    5.04741E-06
+ evolutionary energy parmeters : 
+                        alpha  :    4.04232E-01
+       (z)       beta parallel :    2.38080E-02
+       (x)       beta perpend  :    6.08202E-03
+                 Jeans number  :    2.47383E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   2.76165E-09  y :  -1.58226E-09  z :   2.17748E-10
+ velocity cm    vx :   4.94667E-06 vy :  -9.95472E-07 vz :  -1.25672E-07
+ smoothing l.  min :   7.92164E-03 max:   8.71543E-03
+ max. dist. cm   r :   1.99903E-01  z :   1.95363E-01
+ density      mean :   2.98575E+01 max:   3.30611E+01 cen:   2.98912E+01
+ visc. switch  min :   1.00000E-01 max:   1.47465E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost         1650
+Dynamic time =  5.5882058625E-03 Step time =  6.20912E-04 Moved        788
+ nghost         1650
+Dynamic time =  6.2091176250E-03 Step time =  1.24182E-03 Moved       7286
+ nghost         1648
+Dynamic time =  6.8300293875E-03 Step time =  1.86274E-03 Moved        820
+ nghost         1631
+Dynamic time =  7.4509411500E-03 Step time =  2.48365E-03 Moved       7386
+ nghost         1626
+Dynamic time =  8.0718529125E-03 Step time =  3.10456E-03 Moved        789
+ nghost         1603
+Dynamic time =  8.6927646750E-03 Step time =  3.72547E-03 Moved       7348
+ nghost         1602
+Dynamic time =  9.3136764375E-03 Step time =  4.34638E-03 Moved        742
+ nghost         1563
+Dynamic time =  9.9345882000E-03 Step time =  4.96729E-03 Moved       7386
+ h too small         146  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          70
+ mean    no. density iterations   1.0181
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  56.7207
+ 
+Timestep distribution     105428 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03        246         19          0
+ 2  1.2418E-03      96413       6826          0
+ 3  6.2091E-04       8298        529          0
+ 4  3.1046E-04        131         12          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   1.5   -    -    -   2.3   -    -    -    -    -    -    -    -    -   
+ 2    -   4.0   -    -    -   4.9   -    -    -    -    -    -    -    -    -   
+ 3    -   3.9   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 4    -   2.1   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          205         246        7711
+ MOVE-POST         7506          41         246
+ nghost         1599
+ time used  :    0.049 min. , ghosts :      22296
+ TREE Timing:
+ step only    time:    0.049 min.  99.32 %
+ densityi     time:    0.033 min.  67.94 %
+  densit-1    time:    0.031 min.  92.31 %
+  densit-2    time:    0.003 min.   7.69 %
+  divv        time:    0.001 min.   1.95 %
+ forcei       time:    0.008 min.  16.15 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.10 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.00 %
+ step-8       time:    0.000 min.   0.03 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.14 %
+ step-15      time:    0.000 min.   0.27 %
+ insulate     time:    0.004 min.   8.55 %
+  TRE mtree   time:    0.004 min.  98.02 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   1.59 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST002 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :    3/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  5.4260000000E+00
+ SIMTIME  :  9.9345882000E-03
+ Free Fall Time  :  9.9999999338E-02
+ General properties of system : 
+ total energy                       :   -1.71792E+00
+ kinetic energy                     :    8.83337E-02
+ rotational energy around z         :    7.20772E-02
+ rotational energy around x         :    1.82836E-02
+ potential energy                   :   -3.02304E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.77062E-02
+ total linear momentum              :    3.09732E-06
+ evolutionary energy parmeters : 
+                        alpha  :    4.02506E-01
+       (z)       beta parallel :    2.38426E-02
+       (x)       beta perpend  :    6.04810E-03
+                 Jeans number  :    2.48443E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   2.56053E-08  y :  -6.18451E-09  z :  -7.80275E-10
+ velocity cm    vx :  -1.85849E-06 vy :  -2.46296E-06 vz :  -2.70633E-07
+ smoothing l.  min :   7.94001E-03 max:   8.89096E-03
+ max. dist. cm   r :   1.99850E-01  z :   1.96012E-01
+ density      mean :   2.99218E+01 max:   3.27784E+01 cen:   3.02877E+01
+ visc. switch  min :   1.00000E-01 max:   2.26841E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+Dynamic time =  1.0555499963E-02 Step time =  6.20912E-04 Moved        562
+ nghost         1577
+Dynamic time =  1.1176411725E-02 Step time =  1.24182E-03 Moved       7447
+Dynamic time =  1.1797323488E-02 Step time =  1.86274E-03 Moved        467
+ nghost         1539
+Dynamic time =  1.2418235250E-02 Step time =  2.48365E-03 Moved       7465
+Dynamic time =  1.3039147013E-02 Step time =  3.10456E-03 Moved        308
+ nghost         1503
+Dynamic time =  1.3660058775E-02 Step time =  3.72547E-03 Moved       7459
+Dynamic time =  1.4280970537E-02 Step time =  4.34638E-03 Moved        239
+ nghost         1474
+Dynamic time =  1.4901882300E-02 Step time =  4.96729E-03 Moved       7465
+ h too small         152  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          73
+ mean    no. density iterations   1.0301
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  56.8536
+ 
+Timestep distribution     105596 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03        108          9          0
+ 2  1.2418E-03     100728       7131          0
+ 3  6.2091E-04       4252        325          0
+ 4  3.1046E-04          0          0          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -    -    -    -    -   2.0   -    -    -    -    -    -    -    -    -   
+ 2    -   4.3   -    -    -   4.9   -    -    -    -    -    -    -    -    -   
+ 3    -   3.6   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          152         156        7658
+ MOVE-POST         7506           4         156
+ nghost         1458
+ time used  :    0.045 min. , ghosts :      20512
+ TREE Timing:
+ step only    time:    0.044 min.  99.29 %
+ densityi     time:    0.031 min.  70.39 %
+  densit-1    time:    0.029 min.  92.49 %
+  densit-2    time:    0.002 min.   7.51 %
+  divv        time:    0.001 min.   1.85 %
+ forcei       time:    0.008 min.  17.43 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.04 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.07 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.04 %
+ step-8       time:    0.000 min.   0.00 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.04 %
+ step-15      time:    0.000 min.   0.34 %
+ insulate     time:    0.002 min.   5.18 %
+  TRE mtree   time:    0.002 min.  92.09 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   7.91 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST003 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :    4/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  9.0060000001E+00
+ SIMTIME  :  1.4901882300E-02
+ Free Fall Time  :  1.4999999901E-01
+ General properties of system : 
+ total energy                       :   -1.72130E+00
+ kinetic energy                     :    1.05428E-01
+ rotational energy around z         :    7.28927E-02
+ rotational energy around x         :    1.84160E-02
+ potential energy                   :   -3.04352E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76985E-02
+ total linear momentum              :    3.14182E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.99797E-01
+       (z)       beta parallel :    2.39501E-02
+       (x)       beta perpend  :    6.05088E-03
+                 Jeans number  :    2.50127E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   1.81335E-08  y :  -1.32752E-08  z :  -2.07238E-09
+ velocity cm    vx :  -2.49065E-06 vy :  -1.90117E-06 vz :  -2.30790E-07
+ smoothing l.  min :   7.95017E-03 max:   9.47860E-03
+ max. dist. cm   r :   1.99764E-01  z :   1.95850E-01
+ density      mean :   3.01027E+01 max:   3.27184E+01 cen:   3.09674E+01
+ visc. switch  min :   1.00000E-01 max:   2.21509E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+Dynamic time =  1.5522794063E-02 Step time =  6.20912E-04 Moved        320
+ nghost         1420
+Dynamic time =  1.6143705825E-02 Step time =  1.24182E-03 Moved       7492
+Dynamic time =  1.6764617587E-02 Step time =  1.86274E-03 Moved        440
+ nghost         1385
+Dynamic time =  1.7385529350E-02 Step time =  2.48365E-03 Moved       7502
+Dynamic time =  1.8006441113E-02 Step time =  3.10456E-03 Moved        501
+ nghost         1352
+Dynamic time =  1.8627352875E-02 Step time =  3.72547E-03 Moved       7497
+Dynamic time =  1.9248264638E-02 Step time =  4.34638E-03 Moved        529
+ nghost         1329
+Dynamic time =  1.9869176400E-02 Step time =  4.96729E-03 Moved       7502
+ h too small         148  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          71
+ mean    no. density iterations   1.0211
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.2895
+ 
+Timestep distribution     105668 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03         48          5          0
+ 2  1.2418E-03      98060       6995          0
+ 3  6.2091E-04       6740        485          0
+ 4  3.1046E-04        240         17          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -    -    -    -    -   1.7   -    -    -    -    -    -    -    -    -   
+ 2    -   4.3   -    -    -   4.9   -    -    -    -    -    -    -    -    -   
+ 3    -   3.8   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 4    -   2.4   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          131         124        7637
+ MOVE-POST         7513           0         124
+ nghost         1351
+ time used  :    0.046 min. , ghosts :      18760
+ TREE Timing:
+ step only    time:    0.045 min.  99.27 %
+ densityi     time:    0.032 min.  70.73 %
+  densit-1    time:    0.030 min.  92.55 %
+  densit-2    time:    0.002 min.   7.45 %
+  divv        time:    0.001 min.   1.91 %
+ forcei       time:    0.008 min.  17.64 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.04 %
+ step-5       time:    0.000 min.   0.04 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.04 %
+ step-8       time:    0.000 min.   0.04 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.15 %
+ step-15      time:    0.000 min.   0.18 %
+ insulate     time:    0.002 min.   4.94 %
+  TRE mtree   time:    0.002 min.  96.30 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   3.70 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST004 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :    5/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  1.1921000000E+01
+ SIMTIME  :  1.9869176400E-02
+ Free Fall Time  :  1.9999999868E-01
+ General properties of system : 
+ total energy                       :   -1.72569E+00
+ kinetic energy                     :    1.28549E-01
+ rotational energy around z         :    7.43213E-02
+ rotational energy around x         :    1.89095E-02
+ potential energy                   :   -3.07104E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76945E-02
+ total linear momentum              :    3.03199E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.96216E-01
+       (z)       beta parallel :    2.42007E-02
+       (x)       beta perpend  :    6.15738E-03
+                 Jeans number  :    2.52388E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   7.92571E-09  y :  -2.49863E-08  z :  -2.94294E-09
+ velocity cm    vx :  -1.10402E-06 vy :  -2.81794E-06 vz :  -1.82630E-07
+ smoothing l.  min :   7.82539E-03 max:   9.71817E-03
+ max. dist. cm   r :   1.99511E-01  z :   1.94767E-01
+ density      mean :   3.03791E+01 max:   3.42992E+01 cen:   3.19604E+01
+ visc. switch  min :   1.00000E-01 max:   2.21645E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+Dynamic time =  2.0490088162E-02 Step time =  6.20912E-04 Moved        511
+ nghost         1320
+Dynamic time =  2.1110999925E-02 Step time =  1.24182E-03 Moved       7508
+Dynamic time =  2.1731911688E-02 Step time =  1.86274E-03 Moved        436
+ nghost         1303
+Dynamic time =  2.2352823450E-02 Step time =  2.48365E-03 Moved       7513
+Dynamic time =  2.2973735212E-02 Step time =  3.10456E-03 Moved        368
+ nghost         1295
+Dynamic time =  2.3594646975E-02 Step time =  3.72547E-03 Moved       7512
+Dynamic time =  2.4215558738E-02 Step time =  4.34638E-03 Moved        289
+ nghost         1264
+Dynamic time =  2.4836470500E-02 Step time =  4.96729E-03 Moved       7513
+ h too small         152  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          71
+ mean    no. density iterations   1.0186
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.3310
+ 
+Timestep distribution     105682 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03         35          1          0
+ 2  1.2418E-03     102055       7289          0
+ 3  6.2091E-04       2998        223          0
+ 4  3.1046E-04          0          0          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   1.5   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 2    -   4.3   -    -    -   4.9   -    -    -    -    -    -    -    -    -   
+ 3    -   3.5   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          117         111        7630
+ MOVE-POST         7519           0         111
+ nghost         1269
+ time used  :    0.045 min. , ghosts :      17704
+ TREE Timing:
+ step only    time:    0.045 min.  99.30 %
+ densityi     time:    0.032 min.  70.59 %
+  densit-1    time:    0.029 min.  92.51 %
+  densit-2    time:    0.002 min.   7.49 %
+  divv        time:    0.001 min.   1.99 %
+ forcei       time:    0.008 min.  17.83 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.04 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.07 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.00 %
+ step-8       time:    0.000 min.   0.04 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.04 %
+ step-15      time:    0.000 min.   0.22 %
+ insulate     time:    0.002 min.   4.96 %
+  TRE mtree   time:    0.002 min.  96.27 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   3.73 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST005 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :    6/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  1.4782000000E+01
+ SIMTIME  :  2.4836470500E-02
+ Free Fall Time  :  2.4999999834E-01
+ General properties of system : 
+ total energy                       :   -1.73333E+00
+ kinetic energy                     :    1.55364E-01
+ rotational energy around z         :    7.58116E-02
+ rotational energy around x         :    1.91886E-02
+ potential energy                   :   -3.10549E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76910E-02
+ total linear momentum              :    4.59375E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.91820E-01
+       (z)       beta parallel :    2.44121E-02
+       (x)       beta perpend  :    6.17894E-03
+                 Jeans number  :    2.55219E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   1.14182E-08  y :  -4.09476E-08  z :  -3.64882E-09
+ velocity cm    vx :   2.72755E-06 vy :  -3.69451E-06 vz :  -1.16550E-07
+ smoothing l.  min :   7.75744E-03 max:   9.90358E-03
+ max. dist. cm   r :   1.99141E-01  z :   1.93745E-01
+ density      mean :   3.08433E+01 max:   3.52004E+01 cen:   3.33128E+01
+ visc. switch  min :   1.00000E-01 max:   2.43822E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+Dynamic time =  2.5457382262E-02 Step time =  6.20912E-04 Moved        225
+ nghost         1242
+Dynamic time =  2.6078294025E-02 Step time =  1.24182E-03 Moved       7518
+Dynamic time =  2.6699205787E-02 Step time =  1.86274E-03 Moved        182
+ nghost         1224
+Dynamic time =  2.7320117550E-02 Step time =  2.48365E-03 Moved       7519
+Dynamic time =  2.7941029312E-02 Step time =  3.10456E-03 Moved        179
+ nghost         1209
+Dynamic time =  2.8561941075E-02 Step time =  3.72547E-03 Moved       7512
+Dynamic time =  2.9182852837E-02 Step time =  4.34638E-03 Moved        181
+ nghost         1192
+Dynamic time =  2.9803764600E-02 Step time =  4.96729E-03 Moved       7519
+ h too small         150  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          69
+ mean    no. density iterations   1.0150
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.4788
+ 
+Timestep distribution     105694 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03        404         29          0
+ 2  1.2418E-03     102224       7288          0
+ 3  6.2091E-04       2460        202          0
+ 4  3.1046E-04          0          0          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   1.9   -    -    -   2.5   -    -    -    -    -    -    -    -    -   
+ 2    -   4.4   -    -    -   4.9   -    -    -    -    -    -    -    -    -   
+ 3    -   3.4   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          160         107        7679
+ MOVE-POST         7572           0         107
+ nghost         1193
+ time used  :    0.044 min. , ghosts :      16689
+ TREE Timing:
+ step only    time:    0.043 min.  99.28 %
+ densityi     time:    0.031 min.  70.14 %
+  densit-1    time:    0.028 min.  92.41 %
+  densit-2    time:    0.002 min.   7.59 %
+  divv        time:    0.001 min.   1.90 %
+ forcei       time:    0.008 min.  18.07 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.04 %
+ step-5       time:    0.000 min.   0.04 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.04 %
+ step-8       time:    0.000 min.   0.00 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.04 %
+ step-15      time:    0.000 min.   0.19 %
+ insulate     time:    0.002 min.   4.98 %
+  TRE mtree   time:    0.002 min.  97.71 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   2.29 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST006 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :    7/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  1.7607000000E+01
+ SIMTIME  :  2.9803764600E-02
+ Free Fall Time  :  2.9999999801E-01
+ General properties of system : 
+ total energy                       :   -1.74380E+00
+ kinetic energy                     :    1.86620E-01
+ rotational energy around z         :    7.77778E-02
+ rotational energy around x         :    1.96533E-02
+ potential energy                   :   -3.14721E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76889E-02
+ total linear momentum              :    6.16540E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.86626E-01
+       (z)       beta parallel :    2.47133E-02
+       (x)       beta perpend  :    6.24466E-03
+                 Jeans number  :    2.58648E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   3.22099E-08  y :  -5.94418E-08  z :  -4.23151E-09
+ velocity cm    vx :   5.04357E-06 vy :  -3.54178E-06 vz :  -1.73971E-07
+ smoothing l.  min :   7.64468E-03 max:   1.02115E-02
+ max. dist. cm   r :   1.98658E-01  z :   1.93487E-01
+ density      mean :   3.15061E+01 max:   3.67698E+01 cen:   3.50911E+01
+ visc. switch  min :   1.00000E-01 max:   2.69695E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+Dynamic time =  3.0424676362E-02 Step time =  6.20912E-04 Moved        206
+ nghost         1173
+Dynamic time =  3.1045588125E-02 Step time =  1.24182E-03 Moved       7543
+Dynamic time =  3.1666499887E-02 Step time =  1.86274E-03 Moved        251
+ nghost         1149
+Dynamic time =  3.2287411650E-02 Step time =  2.48365E-03 Moved       7572
+Dynamic time =  3.2908323412E-02 Step time =  3.10456E-03 Moved        232
+ nghost         1134
+Dynamic time =  3.3529235175E-02 Step time =  3.72547E-03 Moved       7511
+Dynamic time =  3.4150146938E-02 Step time =  4.34638E-03 Moved        203
+ nghost         1099
+Dynamic time =  3.4771058700E-02 Step time =  4.96729E-03 Moved       7572
+ h too small         150  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          70
+ mean    no. density iterations   1.0171
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.4420
+ 
+Timestep distribution     105844 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       1589        105          0
+ 2  1.2418E-03     100943       7263          0
+ 3  6.2091E-04       2556        204          0
+ 4  3.1046E-04          0          0          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   2.5   -    -    -   3.1   -    -    -    -    -    -    -    -    -   
+ 2    -   4.3   -    -    -   4.9   -    -    -    -    -    -    -    -    -   
+ 3    -   3.4   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          114           8        7686
+ MOVE-POST         7678           0           8
+ nghost         1125
+ time used  :    0.044 min. , ghosts :      15618
+ TREE Timing:
+ step only    time:    0.043 min.  99.28 %
+ densityi     time:    0.031 min.  70.05 %
+  densit-1    time:    0.028 min.  92.22 %
+  densit-2    time:    0.002 min.   7.73 %
+  divv        time:    0.001 min.   1.85 %
+ forcei       time:    0.008 min.  18.29 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.04 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.04 %
+ step-8       time:    0.000 min.   0.00 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.11 %
+ step-15      time:    0.000 min.   0.08 %
+ insulate     time:    0.002 min.   5.07 %
+  TRE mtree   time:    0.002 min.  98.50 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   1.50 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST007 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :    8/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  2.0504000000E+01
+ SIMTIME  :  3.4771058700E-02
+ Free Fall Time  :  3.4999999768E-01
+ General properties of system : 
+ total energy                       :   -1.75773E+00
+ kinetic energy                     :    2.22093E-01
+ rotational energy around z         :    8.01948E-02
+ rotational energy around x         :    2.02719E-02
+ potential energy                   :   -3.19661E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76872E-02
+ total linear momentum              :    5.12782E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.80650E-01
+       (z)       beta parallel :    2.50874E-02
+       (x)       beta perpend  :    6.34167E-03
+                 Jeans number  :    2.62708E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   5.69873E-08  y :  -7.54083E-08  z :  -5.23840E-09
+ velocity cm    vx :   4.44603E-06 vy :  -2.55200E-06 vz :  -1.21056E-07
+ smoothing l.  min :   7.48475E-03 max:   1.05434E-02
+ max. dist. cm   r :   1.98107E-01  z :   1.93539E-01
+ density      mean :   3.24178E+01 max:   3.91492E+01 cen:   3.73907E+01
+ visc. switch  min :   1.00000E-01 max:   3.17266E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+Dynamic time =  3.5391970462E-02 Step time =  6.20912E-04 Moved        207
+ nghost         1086
+Dynamic time =  3.6012882225E-02 Step time =  1.24182E-03 Moved       7571
+Dynamic time =  3.6633793987E-02 Step time =  1.86274E-03 Moved        193
+ nghost         1061
+Dynamic time =  3.7254705750E-02 Step time =  2.48365E-03 Moved       7678
+Dynamic time =  3.7875617512E-02 Step time =  3.10456E-03 Moved        177
+ nghost         1052
+Dynamic time =  3.8496529275E-02 Step time =  3.72547E-03 Moved       7497
+Dynamic time =  3.9117441037E-02 Step time =  4.34638E-03 Moved        177
+ nghost         1016
+Dynamic time =  3.9738352800E-02 Step time =  4.96729E-03 Moved       7678
+ h too small         154  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          70
+ mean    no. density iterations   1.0177
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.4622
+ 
+Timestep distribution     106080 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       3670        256          0
+ 2  1.2418E-03      99450       7255          0
+ 3  6.2091E-04       1968        167          0
+ 4  3.1046E-04          0          0          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.0   -    -    -   3.4   -    -    -    -    -    -    -    -    -   
+ 2    -   4.4   -    -    -   4.9   -    -    -    -    -    -    -    -    -   
+ 3    -   3.3   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          139         469        7817
+ MOVE-POST         7678         330         469
+ nghost         1002
+ time used  :    0.044 min. , ghosts :      14291
+ TREE Timing:
+ step only    time:    0.044 min.  99.28 %
+ densityi     time:    0.031 min.  70.01 %
+  densit-1    time:    0.028 min.  92.43 %
+  densit-2    time:    0.002 min.   7.57 %
+  divv        time:    0.001 min.   1.78 %
+ forcei       time:    0.008 min.  18.33 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.04 %
+ step-5       time:    0.000 min.   0.04 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.00 %
+ step-8       time:    0.000 min.   0.11 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.04 %
+ step-15      time:    0.000 min.   0.11 %
+ insulate     time:    0.002 min.   4.96 %
+  TRE mtree   time:    0.002 min.  97.71 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   2.29 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST008 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :    9/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  2.3292000000E+01
+ SIMTIME  :  3.9738352800E-02
+ Free Fall Time  :  3.9999999735E-01
+ General properties of system : 
+ total energy                       :   -1.77663E+00
+ kinetic energy                     :    2.61528E-01
+ rotational energy around z         :    8.30100E-02
+ rotational energy around x         :    2.09563E-02
+ potential energy                   :   -3.25495E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76866E-02
+ total linear momentum              :    3.49884E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.73829E-01
+       (z)       beta parallel :    2.55027E-02
+       (x)       beta perpend  :    6.43828E-03
+                 Jeans number  :    2.67502E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   7.46487E-08  y :  -8.64332E-08  z :  -6.19975E-09
+ velocity cm    vx :   2.75077E-06 vy :  -2.13124E-06 vz :  -3.64659E-07
+ smoothing l.  min :   7.31957E-03 max:   1.07833E-02
+ max. dist. cm   r :   1.97658E-01  z :   1.93138E-01
+ density      mean :   3.36399E+01 max:   4.18301E+01 cen:   4.03483E+01
+ visc. switch  min :   1.00000E-01 max:   3.60928E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+Dynamic time =  4.0359264562E-02 Step time =  6.20912E-04 Moved        168
+ nghost          989
+Dynamic time =  4.0980176325E-02 Step time =  1.24182E-03 Moved       7104
+Dynamic time =  4.1601088087E-02 Step time =  1.86274E-03 Moved        144
+ nghost          950
+Dynamic time =  4.2221999850E-02 Step time =  2.48365E-03 Moved       7348
+Dynamic time =  4.2842911612E-02 Step time =  3.10456E-03 Moved        100
+ nghost          941
+Dynamic time =  4.3463823375E-02 Step time =  3.72547E-03 Moved       7075
+Dynamic time =  4.4084735137E-02 Step time =  4.34638E-03 Moved         72
+ nghost          916
+Dynamic time =  4.4705646900E-02 Step time =  4.96729E-03 Moved       7348
+ h too small         161  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          69
+ mean    no. density iterations   1.0352
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.3891
+ 
+Timestep distribution     106365 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       4597        301          0
+ 2  1.2418E-03      99756       6976          0
+ 3  6.2091E-04        735         71          0
+ 4  3.1046E-04          0          0          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.1   -    -    -   3.5   -    -    -    -    -    -    -    -    -   
+ 2    -   4.4   -    -    -   4.9   -    -    -    -    -    -    -    -    -   
+ 3    -   2.9   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          197         380        7875
+ MOVE-POST         7678         183         380
+ nghost          936
+ time used  :    0.044 min. , ghosts :      13184
+ TREE Timing:
+ step only    time:    0.044 min.  99.24 %
+ densityi     time:    0.031 min.  70.44 %
+  densit-1    time:    0.029 min.  92.58 %
+  densit-2    time:    0.002 min.   7.42 %
+  divv        time:    0.001 min.   1.88 %
+ forcei       time:    0.008 min.  17.30 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.04 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.00 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.00 %
+ step-8       time:    0.000 min.   0.00 %
+ step-13      time:    0.000 min.   0.04 %
+ step-14      time:    0.000 min.   0.00 %
+ step-15      time:    0.000 min.   0.19 %
+ insulate     time:    0.002 min.   4.92 %
+  TRE mtree   time:    0.002 min.  97.69 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   2.31 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST009 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   10/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  2.6077000000E+01
+ SIMTIME  :  4.4705646900E-02
+ Free Fall Time  :  4.4999999702E-01
+ General properties of system : 
+ total energy                       :   -1.80007E+00
+ kinetic energy                     :    3.05465E-01
+ rotational energy around z         :    8.64132E-02
+ rotational energy around x         :    2.18190E-02
+ potential energy                   :   -3.32233E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76862E-02
+ total linear momentum              :    2.52325E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.66247E-01
+       (z)       beta parallel :    2.60098E-02
+       (x)       beta perpend  :    6.56739E-03
+                 Jeans number  :    2.73040E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   8.58434E-08  y :  -9.62809E-08  z :  -8.07710E-09
+ velocity cm    vx :   1.79462E-06 vy :  -1.74686E-06 vz :  -3.07558E-07
+ smoothing l.  min :   7.10451E-03 max:   1.11401E-02
+ max. dist. cm   r :   1.97395E-01  z :   1.92127E-01
+ density      mean :   3.52382E+01 max:   4.58152E+01 cen:   4.41627E+01
+ visc. switch  min :   1.00000E-01 max:   4.20049E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+Dynamic time =  4.5326558662E-02 Step time =  6.20912E-04 Moved         71
+ nghost          922
+Dynamic time =  4.5947470425E-02 Step time =  1.24182E-03 Moved       7189
+Dynamic time =  4.6568382187E-02 Step time =  1.86274E-03 Moved         58
+ nghost          885
+Dynamic time =  4.7189293950E-02 Step time =  2.48365E-03 Moved       7495
+Dynamic time =  4.7810205712E-02 Step time =  3.10456E-03 Moved         59
+ nghost          875
+Dynamic time =  4.8431117475E-02 Step time =  3.72547E-03 Moved       7104
+Dynamic time =  4.9052029237E-02 Step time =  4.34638E-03 Moved        530
+ nghost          838
+Dynamic time =  4.9672941000E-02 Step time =  4.96729E-03 Moved       7495
+ h too small         150  times
+ minimum no. of neigh           11
+ minimum no. neigh for sync step          11
+ maximum no. neigh for sync step          71
+ mean    no. density iterations   1.0445
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.3589
+ 
+Timestep distribution     106365 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       6440        439          0
+ 2  1.2418E-03      58126       4165          0
+ 3  6.2091E-04      40522       2891          0
+ 4  3.1046E-04          0          0          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.2   -    -    -   3.7   -    -    -    -    -    -    -    -    -   
+ 2    -   4.4   -    -    -   4.5   -    -    -    -    -    -    -    -    -   
+ 3    -   2.8   -    -    -   4.6   -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          128         332        7806
+ MOVE-POST         7678         204         332
+ nghost          841
+ time used  :    0.045 min. , ghosts :      11953
+ TREE Timing:
+ step only    time:    0.045 min.  99.29 %
+ densityi     time:    0.032 min.  71.02 %
+  densit-1    time:    0.030 min.  92.58 %
+  densit-2    time:    0.002 min.   7.42 %
+  divv        time:    0.001 min.   1.72 %
+ forcei       time:    0.008 min.  17.22 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.00 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.04 %
+ step-8       time:    0.000 min.   0.00 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.04 %
+ step-15      time:    0.000 min.   0.15 %
+ insulate     time:    0.002 min.   4.90 %
+  TRE mtree   time:    0.002 min.  98.48 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   1.52 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST010 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   11/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  2.8940000000E+01
+ SIMTIME  :  4.9672941000E-02
+ Free Fall Time  :  4.9999999669E-01
+ General properties of system : 
+ total energy                       :   -1.82892E+00
+ kinetic energy                     :    3.54542E-01
+ rotational energy around z         :    9.04506E-02
+ rotational energy around x         :    2.28550E-02
+ potential energy                   :   -3.40026E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76861E-02
+ total linear momentum              :    3.38814E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.57853E-01
+       (z)       beta parallel :    2.66011E-02
+       (x)       beta perpend  :    6.72157E-03
+                 Jeans number  :    2.79444E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   9.75517E-08  y :  -1.04440E-07  z :  -9.96014E-09
+ velocity cm    vx :   3.11829E-06 vy :  -1.25703E-06 vz :  -4.19073E-07
+ smoothing l.  min :   6.85954E-03 max:   1.16581E-02
+ max. dist. cm   r :   1.97620E-01  z :   1.92018E-01
+ density      mean :   3.73140E+01 max:   5.08304E+01 cen:   4.91259E+01
+ visc. switch  min :   1.00000E-01 max:   4.82635E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          841
+Dynamic time =  5.0293852762E-02 Step time =  6.20912E-04 Moved       2877
+ nghost          825
+Dynamic time =  5.0914764525E-02 Step time =  1.24182E-03 Moved       7038
+ nghost          827
+Dynamic time =  5.1535676287E-02 Step time =  1.86274E-03 Moved       2971
+ nghost          790
+Dynamic time =  5.2156588050E-02 Step time =  2.48365E-03 Moved       7474
+ nghost          797
+Dynamic time =  5.2777499812E-02 Step time =  3.10456E-03 Moved       3055
+ nghost          780
+Dynamic time =  5.3398411575E-02 Step time =  3.72547E-03 Moved       6970
+ nghost          785
+Dynamic time =  5.4019323337E-02 Step time =  4.34638E-03 Moved       3092
+ nghost          770
+Dynamic time =  5.4640235100E-02 Step time =  4.96729E-03 Moved       7474
+ h too small         155  times
+ minimum no. of neigh           11
+ minimum no. neigh for sync step          11
+ maximum no. neigh for sync step          70
+ mean    no. density iterations   1.0231
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.2934
+ 
+Timestep distribution     106365 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       8449        559          0
+ 2  1.2418E-03      52813       3792          0
+ 3  6.2091E-04      43826       3123          0
+ 4  3.1046E-04          0          0          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.4   -    -    -   3.8   -    -    -    -    -    -    -    -    -   
+ 2    -   4.4   -    -    -   4.4   -    -    -    -    -    -    -    -    -   
+ 3    -   2.9   -    -    -   4.6   -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          162         373        7840
+ MOVE-POST         7678         211         373
+ nghost          771
+ time used  :    0.062 min. , ghosts :      11030
+ TREE Timing:
+ step only    time:    0.062 min.  99.46 %
+ densityi     time:    0.043 min.  69.25 %
+  densit-1    time:    0.039 min.  91.79 %
+  densit-2    time:    0.004 min.   8.21 %
+  divv        time:    0.001 min.   1.74 %
+ forcei       time:    0.011 min.  16.98 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.03 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.03 %
+ step-5       time:    0.000 min.   0.00 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.05 %
+ step-8       time:    0.000 min.   0.05 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.08 %
+ step-15      time:    0.000 min.   0.08 %
+ insulate     time:    0.004 min.   6.65 %
+  TRE mtree   time:    0.004 min. 100.00 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST011 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   12/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  3.2859000000E+01
+ SIMTIME  :  5.4640235100E-02
+ Free Fall Time  :  5.4999999636E-01
+ General properties of system : 
+ total energy                       :   -1.86383E+00
+ kinetic energy                     :    4.09569E-01
+ rotational energy around z         :    9.52078E-02
+ rotational energy around x         :    2.40543E-02
+ potential energy                   :   -3.49019E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76864E-02
+ total linear momentum              :    4.42121E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.48632E-01
+       (z)       beta parallel :    2.72787E-02
+       (x)       beta perpend  :    6.89198E-03
+                 Jeans number  :    2.86835E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   1.16055E-07  y :  -1.09971E-07  z :  -1.19312E-08
+ velocity cm    vx :   4.30034E-06 vy :  -1.01321E-06 vz :  -1.66022E-07
+ smoothing l.  min :   6.58523E-03 max:   1.20788E-02
+ max. dist. cm   r :   1.98105E-01  z :   1.92533E-01
+ density      mean :   4.00208E+01 max:   5.75696E+01 cen:   5.56948E+01
+ visc. switch  min :   1.00000E-01 max:   5.55678E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          771
+Dynamic time =  5.5261146862E-02 Step time =  6.20912E-04 Moved       3128
+ nghost          764
+Dynamic time =  5.5882058625E-02 Step time =  1.24182E-03 Moved       6917
+ nghost          768
+Dynamic time =  5.6502970387E-02 Step time =  1.86274E-03 Moved       3135
+ nghost          742
+Dynamic time =  5.7123882150E-02 Step time =  2.48365E-03 Moved       7467
+ nghost          752
+Dynamic time =  5.7744793912E-02 Step time =  3.10456E-03 Moved       3159
+ nghost          738
+Dynamic time =  5.8365705675E-02 Step time =  3.72547E-03 Moved       6888
+ nghost          739
+Dynamic time =  5.8986617437E-02 Step time =  4.34638E-03 Moved       3168
+ nghost          718
+Dynamic time =  5.9607529200E-02 Step time =  4.96729E-03 Moved       7467
+ h too small         177  times
+ minimum no. of neigh           11
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          70
+ mean    no. density iterations   1.0408
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.2460
+ 
+Timestep distribution     106365 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       7269        487          0
+ 2  1.2418E-03      53098       3798          0
+ 3  6.2091E-04      44721       3182          0
+ 4  3.1046E-04          0          0          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.4   -    -    -   3.7   -    -    -    -    -    -    -    -    -   
+ 2    -   4.4   -    -    -   4.4   -    -    -    -    -    -    -    -    -   
+ 3    -   2.9   -    -    -   4.6   -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          190         379        7868
+ MOVE-POST         7678         189         379
+ nghost          729
+ time used  :    0.064 min. , ghosts :      10335
+ TREE Timing:
+ step only    time:    0.064 min.  99.48 %
+ densityi     time:    0.045 min.  69.77 %
+  densit-1    time:    0.041 min.  91.99 %
+  densit-2    time:    0.004 min.   8.01 %
+  divv        time:    0.001 min.   1.63 %
+ forcei       time:    0.011 min.  16.63 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.03 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.05 %
+ step-8       time:    0.000 min.   0.03 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.08 %
+ step-15      time:    0.000 min.   0.08 %
+ insulate     time:    0.004 min.   6.57 %
+  TRE mtree   time:    0.004 min.  99.61 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST012 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   13/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  3.6912000000E+01
+ SIMTIME  :  5.9607529200E-02
+ Free Fall Time  :  5.9999999603E-01
+ General properties of system : 
+ total energy                       :   -1.90613E+00
+ kinetic energy                     :    4.71963E-01
+ rotational energy around z         :    1.00954E-01
+ rotational energy around x         :    2.55357E-02
+ potential energy                   :   -3.59488E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76870E-02
+ total linear momentum              :    5.50655E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.38479E-01
+       (z)       beta parallel :    2.80827E-02
+       (x)       beta perpend  :    7.10333E-03
+                 Jeans number  :    2.95439E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   1.39573E-07  y :  -1.15307E-07  z :  -1.12399E-08
+ velocity cm    vx :   5.39741E-06 vy :  -1.09006E-06 vz :   4.25960E-08
+ smoothing l.  min :   6.26415E-03 max:   1.24082E-02
+ max. dist. cm   r :   1.98755E-01  z :   1.93557E-01
+ density      mean :   4.35844E+01 max:   6.67700E+01 cen:   6.45817E+01
+ visc. switch  min :   1.00000E-01 max:   6.38324E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          729
+Dynamic time =  6.0228440962E-02 Step time =  6.20912E-04 Moved       3199
+ nghost          720
+Dynamic time =  6.0849352725E-02 Step time =  1.24182E-03 Moved       7011
+ nghost          723
+Dynamic time =  6.1470264487E-02 Step time =  1.86274E-03 Moved       3234
+ nghost          694
+Dynamic time =  6.2091176250E-02 Step time =  2.48365E-03 Moved       7489
+ nghost          705
+Dynamic time =  6.2712088012E-02 Step time =  3.10456E-03 Moved       3280
+ nghost          695
+Dynamic time =  6.3332999775E-02 Step time =  3.72547E-03 Moved       7110
+ nghost          698
+Dynamic time =  6.3953911537E-02 Step time =  4.34638E-03 Moved       3315
+ nghost          662
+Dynamic time =  6.4574823300E-02 Step time =  4.96729E-03 Moved       7489
+ h too small         188  times
+ minimum no. of neigh           12
+ minimum no. neigh for sync step          11
+ maximum no. neigh for sync step          70
+ mean    no. density iterations   1.0391
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.2498
+ 
+Timestep distribution     106437 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       5448        343          0
+ 2  1.2418E-03      53029       3787          0
+ 3  6.2091E-04      46611       3359          0
+ 4  3.1046E-04          0          0          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.3   -    -    -   3.5   -    -    -    -    -    -    -    -    -   
+ 2    -   4.5   -    -    -   4.4   -    -    -    -    -    -    -    -    -   
+ 3    -   3.2   -    -    -   4.7   -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          199         360        7877
+ MOVE-POST         7678         161         360
+ nghost          666
+ time used  :    0.067 min. , ghosts :       9540
+ TREE Timing:
+ step only    time:    0.066 min.  99.45 %
+ densityi     time:    0.046 min.  69.51 %
+  densit-1    time:    0.043 min.  92.00 %
+  densit-2    time:    0.004 min.   8.00 %
+  divv        time:    0.001 min.   1.66 %
+ forcei       time:    0.011 min.  16.69 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.03 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.03 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.03 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.03 %
+ step-8       time:    0.000 min.   0.03 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.05 %
+ step-15      time:    0.000 min.   0.13 %
+ insulate     time:    0.005 min.   6.82 %
+  TRE mtree   time:    0.005 min. 100.00 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST013 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   14/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  4.1090000000E+01
+ SIMTIME  :  6.4574823300E-02
+ Free Fall Time  :  6.4999999570E-01
+ General properties of system : 
+ total energy                       :   -1.95771E+00
+ kinetic energy                     :    5.43652E-01
+ rotational energy around z         :    1.08009E-01
+ rotational energy around x         :    2.74193E-02
+ potential energy                   :   -3.71815E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76875E-02
+ total linear momentum              :    6.13992E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.27257E-01
+       (z)       beta parallel :    2.90491E-02
+       (x)       beta perpend  :    7.37444E-03
+                 Jeans number  :    3.05570E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   1.68341E-07  y :  -1.21019E-07  z :  -1.19125E-08
+ velocity cm    vx :   6.01744E-06 vy :  -1.19162E-06 vz :  -2.62885E-07
+ smoothing l.  min :   5.91109E-03 max:   1.29792E-02
+ max. dist. cm   r :   1.99330E-01  z :   1.94919E-01
+ density      mean :   4.83600E+01 max:   7.95307E+01 cen:   7.69912E+01
+ visc. switch  min :   1.00000E-01 max:   7.31486E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          666
+Dynamic time =  6.5195735062E-02 Step time =  6.20912E-04 Moved       3375
+ nghost          660
+Dynamic time =  6.5816646825E-02 Step time =  1.24182E-03 Moved       7178
+ nghost          663
+Dynamic time =  6.6437558587E-02 Step time =  1.86274E-03 Moved       3399
+ nghost          646
+Dynamic time =  6.7058470350E-02 Step time =  2.48365E-03 Moved       7517
+ nghost          653
+Dynamic time =  6.7679382112E-02 Step time =  3.10456E-03 Moved       3441
+ nghost          643
+Dynamic time =  6.8300293875E-02 Step time =  3.72547E-03 Moved       7202
+ nghost          647
+Dynamic time =  6.8921205637E-02 Step time =  4.34638E-03 Moved       3489
+ nghost          635
+Dynamic time =  6.9542117400E-02 Step time =  4.96729E-03 Moved       7517
+ h too small         213  times
+ minimum no. of neigh           13
+ minimum no. neigh for sync step          13
+ maximum no. neigh for sync step          71
+ mean    no. density iterations   1.0364
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.2893
+ 
+Timestep distribution     106447 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       6215        353          0
+ 2  1.2418E-03      49913       3632          0
+ 3  6.2091E-04      48936       3531          0
+ 4  3.1046E-04         24          1          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.4   -    -    -   3.5   -    -    -    -    -    -    -    -    -   
+ 2    -   4.5   -    -    -   4.3   -    -    -    -    -    -    -    -    -   
+ 3    -   3.4   -    -    -   4.7   -    -    -    -    -    -    -    -    -   
+ 4    -   1.4   -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          183         369        7861
+ MOVE-POST         7678         186         369
+ nghost          647
+ time used  :    0.069 min. , ghosts :       9028
+ TREE Timing:
+ step only    time:    0.069 min.  99.47 %
+ densityi     time:    0.048 min.  69.87 %
+  densit-1    time:    0.044 min.  92.03 %
+  densit-2    time:    0.004 min.   7.97 %
+  divv        time:    0.001 min.   1.66 %
+ forcei       time:    0.011 min.  16.53 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.05 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.07 %
+ step-8       time:    0.000 min.   0.00 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.10 %
+ step-15      time:    0.000 min.   0.07 %
+ insulate     time:    0.005 min.   6.72 %
+  TRE mtree   time:    0.005 min. 100.00 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST014 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   15/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  4.5422000000E+01
+ SIMTIME  :  6.9542117400E-02
+ Free Fall Time  :  6.9999999536E-01
+ General properties of system : 
+ total energy                       :   -2.02079E+00
+ kinetic energy                     :    6.27300E-01
+ rotational energy around z         :    1.16749E-01
+ rotational energy around x         :    2.97440E-02
+ potential energy                   :   -3.86489E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76879E-02
+ total linear momentum              :    7.62175E-06
+ evolutionary energy parmeters : 
+                        alpha  :    3.14833E-01
+       (z)       beta parallel :    3.02075E-02
+       (x)       beta perpend  :    7.69596E-03
+                 Jeans number  :    3.17629E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   2.00867E-07  y :  -1.29172E-07  z :  -1.32415E-08
+ velocity cm    vx :   7.32599E-06 vy :  -2.04108E-06 vz :  -5.04902E-07
+ smoothing l.  min :   5.51122E-03 max:   1.37538E-02
+ max. dist. cm   r :   1.99704E-01  z :   1.96177E-01
+ density      mean :   5.49313E+01 max:   9.80811E+01 cen:   9.50532E+01
+ visc. switch  min :   1.00000E-01 max:   8.38887E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          647
+Dynamic time =  7.0163029162E-02 Step time =  6.20912E-04 Moved       3510
+ nghost          644
+Dynamic time =  7.0783940925E-02 Step time =  1.24182E-03 Moved       7158
+ nghost          646
+Dynamic time =  7.1404852687E-02 Step time =  1.86274E-03 Moved       3563
+ nghost          637
+Dynamic time =  7.2025764450E-02 Step time =  2.48365E-03 Moved       7492
+ nghost          639
+Dynamic time =  7.2646676212E-02 Step time =  3.10456E-03 Moved       3675
+ number of corrections outer boundary:     1
+ nghost          630
+Dynamic time =  7.3267587975E-02 Step time =  3.72547E-03 Moved       7096
+ nghost          631
+ nghost          631
+Dynamic time =  7.3888499737E-02 Step time =  4.34638E-03 Moved       3776
+ nghost          626
+Dynamic time =  7.4509411500E-02 Step time =  4.96729E-03 Moved       7492
+ h too small         215  times
+ minimum no. of neigh           13
+ minimum no. neigh for sync step          13
+ maximum no. neigh for sync step          70
+ mean    no. density iterations   1.0361
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.3292
+ 
+Timestep distribution     106447 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       5937        348          0
+ 2  1.2418E-03      45919       3318          0
+ 3  6.2091E-04      29082       2108          0
+ 4  3.1046E-04      24150       1718          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.5   -    -    -   3.4   -    -    -    -    -    -    -    -    -   
+ 2    -   4.4   -    -    -   4.3   -    -    -    -    -    -    -    -    -   
+ 3    -   3.6   -    -    -   4.4   -    -    -    -    -    -    -    -    -   
+ 4    -    -    -    -    -   4.4   -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          246         441        7924
+ MOVE-POST         7678         195         441
+ nghost          626
+ time used  :    0.084 min. , ghosts :       8684
+ TREE Timing:
+ step only    time:    0.084 min.  99.56 %
+ densityi     time:    0.057 min.  68.17 %
+  densit-1    time:    0.052 min.  91.37 %
+  densit-2    time:    0.005 min.   8.57 %
+  divv        time:    0.001 min.   1.71 %
+ forcei       time:    0.013 min.  15.96 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.02 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.04 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.00 %
+ step-8       time:    0.000 min.   0.02 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.08 %
+ step-15      time:    0.000 min.   0.10 %
+ insulate     time:    0.007 min.   8.54 %
+  TRE mtree   time:    0.007 min.  99.77 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   0.23 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST015 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   16/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  5.0647000000E+01
+ SIMTIME  :  7.4509411500E-02
+ Free Fall Time  :  7.4999999503E-01
+ General properties of system : 
+ total energy                       :   -2.09807E+00
+ kinetic energy                     :    7.27274E-01
+ rotational energy around z         :    1.27849E-01
+ rotational energy around x         :    3.26878E-02
+ potential energy                   :   -4.04214E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76884E-02
+ total linear momentum              :    1.34441E-05
+ evolutionary energy parmeters : 
+                        alpha  :    3.01027E-01
+       (z)       beta parallel :    3.16291E-02
+       (x)       beta perpend  :    8.08676E-03
+                 Jeans number  :    3.32196E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   3.98693E-07  y :  -1.12296E-07  z :  -1.56632E-08
+ velocity cm    vx :   1.30631E-05 vy :  -3.14218E-06 vz :  -4.73788E-07
+ smoothing l.  min :   5.05952E-03 max:   1.47146E-02
+ max. dist. cm   r :   1.99872E-01  z :   1.97002E-01
+ density      mean :   6.43193E+01 max:   1.26731E+02 cen:   1.22874E+02
+ visc. switch  min :   1.00000E-01 max:   9.64582E-01
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          624
+Dynamic time =  7.5130323262E-02 Step time =  6.20912E-04 Moved       3815
+ nghost          621
+Dynamic time =  7.5751235025E-02 Step time =  1.24182E-03 Moved       7140
+ nghost          622
+Dynamic time =  7.6372146787E-02 Step time =  1.86274E-03 Moved       3926
+ nghost          615
+Dynamic time =  7.6993058550E-02 Step time =  2.48365E-03 Moved       7483
+ nghost          617
+Dynamic time =  7.7613970313E-02 Step time =  3.10456E-03 Moved       4037
+ nghost          607
+Dynamic time =  7.8234882075E-02 Step time =  3.72547E-03 Moved       7208
+ nghost          610
+Dynamic time =  7.8855793837E-02 Step time =  4.34638E-03 Moved       4098
+ nghost          594
+Dynamic time =  7.9476705600E-02 Step time =  4.96729E-03 Moved       7483
+ h too small         231  times
+ minimum no. of neigh           15
+ minimum no. neigh for sync step          13
+ maximum no. neigh for sync step          70
+ mean    no. density iterations   1.0304
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.6944
+ 
+Timestep distribution     106447 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       3730        246          0
+ 2  1.2418E-03      43371       3038          0
+ 3  6.2091E-04      29355       2170          0
+ 4  3.1046E-04      28632       2029          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.4   -    -    -   3.1   -    -    -    -    -    -    -    -    -   
+ 2    -   4.5   -    -    -   4.2   -    -    -    -    -    -    -    -    -   
+ 3    -   3.7   -    -    -   4.4   -    -    -    -    -    -    -    -    -   
+ 4    -   1.5   -    -    -   4.5   -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          262         455        7940
+ MOVE-POST         7678         193         455
+ nghost          592
+ time used  :    0.102 min. , ghosts :       8242
+ TREE Timing:
+ step only    time:    0.102 min.  99.64 %
+ densityi     time:    0.069 min.  67.36 %
+  densit-1    time:    0.063 min.  91.11 %
+  densit-2    time:    0.006 min.   8.86 %
+  divv        time:    0.001 min.   1.62 %
+ forcei       time:    0.016 min.  15.81 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.00 %
+ step-5       time:    0.000 min.   0.02 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.03 %
+ step-8       time:    0.000 min.   0.02 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.03 %
+ step-15      time:    0.000 min.   0.11 %
+ insulate     time:    0.010 min.   9.35 %
+  TRE mtree   time:    0.010 min. 100.00 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST016 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   17/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  5.6940000000E+01
+ SIMTIME  :  7.9476705600E-02
+ Free Fall Time  :  7.9999999470E-01
+ General properties of system : 
+ total energy                       :   -2.19429E+00
+ kinetic energy                     :    8.50607E-01
+ rotational energy around z         :    1.42434E-01
+ rotational energy around x         :    3.66098E-02
+ potential energy                   :   -4.26169E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76890E-02
+ total linear momentum              :    9.72177E-06
+ evolutionary energy parmeters : 
+                        alpha  :    2.85519E-01
+       (z)       beta parallel :    3.34220E-02
+       (x)       beta perpend  :    8.59045E-03
+                 Jeans number  :    3.50239E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   2.88577E-07  y :  -1.69211E-07  z :  -1.66941E-08
+ velocity cm    vx :   6.61907E-06 vy :  -7.11968E-06 vz :  -1.04570E-07
+ smoothing l.  min :   4.54596E-03 max:   1.50939E-02
+ max. dist. cm   r :   1.99937E-01  z :   1.97334E-01
+ density      mean :   7.84805E+01 max:   1.74629E+02 cen:   1.69264E+02
+ visc. switch  min :   1.00000E-01 max:   1.00000E+00
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          592
+Dynamic time =  8.0097617362E-02 Step time =  6.20912E-04 Moved       4231
+ nghost          577
+Dynamic time =  8.0718529125E-02 Step time =  1.24182E-03 Moved       7243
+ nghost          578
+Dynamic time =  8.1339440888E-02 Step time =  1.86274E-03 Moved       4278
+ number of corrections outer boundary:     1
+ nghost          579
+ nghost          564
+Dynamic time =  8.1960352650E-02 Step time =  2.48365E-03 Moved       7485
+ nghost          563
+Dynamic time =  8.2581264413E-02 Step time =  3.10456E-03 Moved       4395
+ nghost          554
+Dynamic time =  8.3202176175E-02 Step time =  3.72547E-03 Moved       7263
+ nghost          554
+Dynamic time =  8.3823087937E-02 Step time =  4.34638E-03 Moved       4478
+ nghost          540
+Dynamic time =  8.4443999700E-02 Step time =  4.96729E-03 Moved       7485
+ h too small         276  times
+ minimum no. of neigh           14
+ minimum no. neigh for sync step          14
+ maximum no. neigh for sync step          70
+ mean    no. density iterations   1.0425
+  maximum no. density iterations            3
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.9527
+ 
+Timestep distribution     106447 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       4369        256          0
+ 2  1.2418E-03      37701       2651          0
+ 3  6.2091E-04      29963       2236          0
+ 4  3.1046E-04      33055       2342          0
+ 5  1.5523E-04          0          0          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.5   -    -    -   3.2   -    -    -    -    -    -    -    -    -   
+ 2    -   4.4   -    -    -   4.1   -    -    -    -    -    -    -    -    -   
+ 3    -   3.8   -    -    -   4.4   -    -    -    -    -    -    -    -    -   
+ 4    -   1.9   -    -    -   4.5   -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          304         489        7982
+ MOVE-POST         7678         185         489
+ nghost          550
+ time used  :    0.112 min. , ghosts :       7607
+ TREE Timing:
+ step only    time:    0.111 min.  99.66 %
+ densityi     time:    0.076 min.  67.95 %
+  densit-1    time:    0.069 min.  91.42 %
+  densit-2    time:    0.007 min.   8.56 %
+  divv        time:    0.001 min.   1.73 %
+ forcei       time:    0.018 min.  15.91 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.01 %
+ step-5       time:    0.000 min.   0.01 %
+ step-6       time:    0.000 min.   0.01 %
+ step-7       time:    0.000 min.   0.03 %
+ step-8       time:    0.000 min.   0.03 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.09 %
+ step-15      time:    0.000 min.   0.04 %
+ insulate     time:    0.010 min.   8.53 %
+  TRE mtree   time:    0.010 min. 100.00 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST017 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   18/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  6.3794000000E+01
+ SIMTIME  :  8.4443999700E-02
+ Free Fall Time  :  8.4999999437E-01
+ General properties of system : 
+ total energy                       :   -2.31500E+00
+ kinetic energy                     :    1.00954E+00
+ rotational energy around z         :    1.62436E-01
+ rotational energy around x         :    4.20206E-02
+ potential energy                   :   -4.54134E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76891E-02
+ total linear momentum              :    1.15375E-05
+ evolutionary energy parmeters : 
+                        alpha  :    2.67937E-01
+       (z)       beta parallel :    3.57682E-02
+       (x)       beta perpend  :    9.25292E-03
+                 Jeans number  :    3.73222E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   1.43972E-07  y :  -1.97674E-07  z :  -1.90342E-08
+ velocity cm    vx :   2.83483E-06 vy :  -1.11651E-05 vz :  -6.45532E-07
+ smoothing l.  min :   3.95906E-03 max:   1.53126E-02
+ max. dist. cm   r :   1.99821E-01  z :   1.97247E-01
+ density      mean :   1.01675E+02 max:   2.64694E+02 cen:   2.56258E+02
+ visc. switch  min :   1.00000E-01 max:   1.00000E+00
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          550
+Dynamic time =  8.5064911463E-02 Step time =  6.20912E-04 Moved       4579
+ nghost          533
+Dynamic time =  8.5685823225E-02 Step time =  1.24182E-03 Moved       7244
+ nghost          539
+Dynamic time =  8.6306734988E-02 Step time =  1.86274E-03 Moved       4675
+ nghost          513
+Dynamic time =  8.6927646750E-02 Step time =  2.48365E-03 Moved       7493
+ nghost          518
+Dynamic time =  8.7548558513E-02 Step time =  3.10456E-03 Moved       4763
+ nghost          504
+Dynamic time =  8.8169470275E-02 Step time =  3.72547E-03 Moved       7227
+ nghost          509
+Dynamic time =  8.8790382038E-02 Step time =  4.34638E-03 Moved       4842
+ nghost          491
+Dynamic time =  8.9411293800E-02 Step time =  4.96729E-03 Moved       7493
+ h too small         288  times
+ minimum no. of neigh           13
+ minimum no. neigh for sync step          13
+ maximum no. neigh for sync step          71
+ mean    no. density iterations   1.0531
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.5564
+ 
+Timestep distribution     106461 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       4537        248          0
+ 2  1.2418E-03      32568       2281          0
+ 3  6.2091E-04      29005       2194          0
+ 4  3.1046E-04      29574       2099          0
+ 5  1.5523E-04       9404        671          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.4   -    -    -   3.2   -    -    -    -    -    -    -    -    -   
+ 2    -   4.4   -    -    -   3.9   -    -    -    -    -    -    -    -    -   
+ 3    -   3.9   -    -    -   4.3   -    -    -    -    -    -    -    -    -   
+ 4    -   1.5   -    -    -   4.5   -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -   4.0   -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          393         563        8071
+ MOVE-POST         7678         170         563
+ nghost          489
+ time used  :    0.124 min. , ghosts :       6769
+ TREE Timing:
+ step only    time:    0.124 min.  99.69 %
+ densityi     time:    0.086 min.  68.88 %
+  densit-1    time:    0.078 min.  91.26 %
+  densit-2    time:    0.007 min.   8.72 %
+  divv        time:    0.001 min.   1.62 %
+ forcei       time:    0.020 min.  15.79 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.00 %
+ step-4       time:    0.000 min.   0.01 %
+ step-5       time:    0.000 min.   0.03 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.05 %
+ step-8       time:    0.000 min.   0.01 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.03 %
+ step-15      time:    0.000 min.   0.12 %
+ insulate     time:    0.010 min.   7.82 %
+  TRE mtree   time:    0.010 min.  99.49 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   0.51 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST018 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   19/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  7.1424000000E+01
+ SIMTIME  :  8.9411293800E-02
+ Free Fall Time  :  8.9999999404E-01
+ General properties of system : 
+ total energy                       :   -2.47316E+00
+ kinetic energy                     :    1.22724E+00
+ rotational energy around z         :    1.91899E-01
+ rotational energy around x         :    5.02005E-02
+ potential energy                   :   -4.91720E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76898E-02
+ total linear momentum              :    1.31420E-05
+ evolutionary energy parmeters : 
+                        alpha  :    2.47456E-01
+       (z)       beta parallel :    3.90261E-02
+       (x)       beta perpend  :    1.02092E-02
+                 Jeans number  :    4.04111E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   4.96900E-08  y :  -2.21605E-07  z :  -1.32379E-08
+ velocity cm    vx :   2.86252E-07 vy :  -1.30892E-05 vz :  -1.14183E-06
+ smoothing l.  min :   3.26994E-03 max:   1.59891E-02
+ max. dist. cm   r :   1.99972E-01  z :   1.96858E-01
+ density      mean :   1.45077E+02 max:   4.69883E+02 cen:   4.53275E+02
+ visc. switch  min :   1.00000E-01 max:   1.00000E+00
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          489
+Dynamic time =  9.0032205563E-02 Step time =  6.20912E-04 Moved       4995
+ nghost          476
+Dynamic time =  9.0653117325E-02 Step time =  1.24182E-03 Moved       7270
+ nghost          479
+Dynamic time =  9.1274029088E-02 Step time =  1.86274E-03 Moved       5100
+ nghost          462
+Dynamic time =  9.1894940850E-02 Step time =  2.48365E-03 Moved       7508
+ nghost          464
+Dynamic time =  9.2515852613E-02 Step time =  3.10456E-03 Moved       5162
+ nghost          457
+Dynamic time =  9.3136764375E-02 Step time =  3.72547E-03 Moved       7310
+ nghost          458
+Dynamic time =  9.3757676138E-02 Step time =  4.34638E-03 Moved       5221
+ number of corrections outer boundary:     1
+ nghost          451
+Dynamic time =  9.4378587900E-02 Step time =  4.96729E-03 Moved       7508
+ h too small         316  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          72
+ mean    no. density iterations   1.0526
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  56.8665
+ 
+Timestep distribution     106461 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       3287        181          0
+ 2  1.2418E-03      29534       2068          0
+ 3  6.2091E-04      26915       1984          0
+ 4  3.1046E-04      25528       1857          0
+ 5  1.5523E-04      19824       1418          0
+ 6  7.7614E-05          0          0          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.4   -    -    -   3.0   -    -    -    -    -    -    -    -    -   
+ 2    -   4.4   -    -    -   3.8   -    -    -    -    -    -    -    -    -   
+ 3    -   4.0   -    -    -   4.2   -    -    -    -    -    -    -    -    -   
+ 4    -   2.0   -    -    -   4.4   -    -    -    -    -    -    -    -    -   
+ 5    -    -    -    -    -   4.3   -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          465         637        8143
+ MOVE-POST         7678         172         637
+ nghost          458
+ time used  :    0.167 min. , ghosts :       6276
+ TREE Timing:
+ step only    time:    0.166 min.  99.74 %
+ densityi     time:    0.111 min.  66.51 %
+  densit-1    time:    0.100 min.  90.52 %
+  densit-2    time:    0.010 min.   9.46 %
+  divv        time:    0.002 min.   1.64 %
+ forcei       time:    0.025 min.  15.10 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.02 %
+ step-4       time:    0.000 min.   0.01 %
+ step-5       time:    0.000 min.   0.02 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.03 %
+ step-8       time:    0.000 min.   0.02 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.05 %
+ step-15      time:    0.000 min.   0.14 %
+ insulate     time:    0.018 min.  10.71 %
+  TRE mtree   time:    0.018 min.  99.81 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   0.09 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST019 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   20/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  8.1593000000E+01
+ SIMTIME  :  9.4378587900E-02
+ Free Fall Time  :  9.4999999371E-01
+ General properties of system : 
+ total energy                       :   -2.69297E+00
+ kinetic energy                     :    1.55553E+00
+ rotational energy around z         :    2.40804E-01
+ rotational energy around x         :    6.45013E-02
+ potential energy                   :   -5.46530E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76906E-02
+ total linear momentum              :    1.45099E-05
+ evolutionary energy parmeters : 
+                        alpha  :    2.22640E-01
+       (z)       beta parallel :    4.40605E-02
+       (x)       beta perpend  :    1.18020E-02
+                 Jeans number  :    4.49156E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   1.37859E-07  y :  -3.13981E-07  z :  -3.23666E-08
+ velocity cm    vx :   1.59837E-06 vy :  -1.42870E-05 vz :  -1.96561E-06
+ smoothing l.  min :   2.42956E-03 max:   1.66509E-02
+ max. dist. cm   r :   1.99938E-01  z :   1.96314E-01
+ density      mean :   2.49106E+02 max:   1.14480E+03 cen:   1.09279E+03
+ visc. switch  min :   1.00000E-01 max:   1.00000E+00
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          458
+Dynamic time =  9.4999499663E-02 Step time =  6.20912E-04 Moved       5268
+ nghost          448
+Dynamic time =  9.5620411425E-02 Step time =  1.24182E-03 Moved       7328
+ nghost          451
+Dynamic time =  9.6241323188E-02 Step time =  1.86274E-03 Moved       5305
+ nghost          439
+Dynamic time =  9.6862234950E-02 Step time =  2.48365E-03 Moved       7506
+ nghost          443
+Dynamic time =  9.7483146713E-02 Step time =  3.10456E-03 Moved       5333
+ nghost          434
+Dynamic time =  9.8104058475E-02 Step time =  3.72547E-03 Moved       7291
+ nghost          436
+Dynamic time =  9.8724970238E-02 Step time =  4.34638E-03 Moved       5371
+ nghost          425
+Dynamic time =  9.9345882000E-02 Step time =  4.96729E-03 Moved       7506
+ h too small         389  times
+ minimum no. of neigh           10
+ minimum no. neigh for sync step          10
+ maximum no. neigh for sync step          73
+ mean    no. density iterations   1.0733
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  56.6158
+ 
+Timestep distribution     106461 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       3413        218          0
+ 2  1.2418E-03      25829       1835          0
+ 3  6.2091E-04      24201       1744          0
+ 4  3.1046E-04      20833       1485          0
+ 5  1.5523E-04      19596       1413          0
+ 6  7.7614E-05      11216        811          0
+ 7  3.8807E-05          0          0          0
+ 8  1.9403E-05          0          0          0
+ 9  9.7017E-06          0          0          0
+10  4.8509E-06          0          0          0
+11  2.4254E-06          0          0          0
+12  1.2127E-06          0          0          0
+13  6.0636E-07          0          0          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.4   -    -    -   3.1   -    -    -    -    -    -    -    -    -   
+ 2    -   4.3   -    -    -   3.6   -    -    -    -    -    -    -    -    -   
+ 3    -   4.0   -    -    -   4.1   -    -    -    -    -    -    -    -    -   
+ 4    -   2.5   -    -    -   4.3   -    -    -    -    -    -    -    -    -   
+ 5    -   1.9   -    -    -   4.3   -    -    -    -    -    -    -    -    -   
+ 6    -    -    -    -    -   4.0   -    -    -    -    -    -    -    -    -   
+ 7    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 8    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 9    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+10    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+11    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+12    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+13    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE          741         918        8419
+ MOVE-POST         7678         177         918
+ nghost          426
+ time used  :    0.223 min. , ghosts :       5933
+ TREE Timing:
+ step only    time:    0.223 min.  99.79 %
+ densityi     time:    0.153 min.  68.67 %
+  densit-1    time:    0.139 min.  90.49 %
+  densit-2    time:    0.015 min.   9.51 %
+  divv        time:    0.002 min.   1.60 %
+ forcei       time:    0.032 min.  14.14 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.02 %
+ step-4       time:    0.000 min.   0.01 %
+ step-5       time:    0.000 min.   0.08 %
+ step-6       time:    0.000 min.   0.00 %
+ step-7       time:    0.000 min.   0.02 %
+ step-8       time:    0.000 min.   0.05 %
+ step-13      time:    0.000 min.   0.00 %
+ step-14      time:    0.000 min.   0.11 %
+ step-15      time:    0.000 min.   0.04 %
+ insulate     time:    0.020 min.   8.96 %
+  TRE mtree   time:    0.020 min.  99.17 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.000 min.   0.83 %
+  TRE    rt-1 time:    0.000 min. 100.00 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST020 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   21/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  9.5187000000E+01
+ SIMTIME  :  9.9345882000E-02
+ Free Fall Time  :  9.9999999338E-01
+ General properties of system : 
+ total energy                       :   -3.05169E+00
+ kinetic energy                     :    2.15789E+00
+ rotational energy around z         :    3.45352E-01
+ rotational energy around x         :    9.84943E-02
+ potential energy                   :   -6.42638E+00
+ internal energy                    :    1.21679E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76920E-02
+ total linear momentum              :    1.16217E-05
+ evolutionary energy parmeters : 
+                        alpha  :    1.89343E-01
+       (z)       beta parallel :    5.37397E-02
+       (x)       beta perpend  :    1.53266E-02
+                 Jeans number  :    5.28141E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   1.22003E-07  y :  -3.42167E-07  z :  -3.58680E-08
+ velocity cm    vx :   1.88849E-07 vy :  -1.13323E-05 vz :  -2.57040E-06
+ smoothing l.  min :   1.29721E-03 max:   1.73983E-02
+ max. dist. cm   r :   1.99940E-01  z :   1.95747E-01
+ density      mean :   7.26295E+02 max:   7.52607E+03 cen:   7.43661E+03
+ visc. switch  min :   1.00000E-01 max:   1.00000E+00
+ temperature  mean :   1.00000E+01 max:   1.00000E+01 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+ nghost          426
+Dynamic time =  9.9966793763E-02 Step time =  6.20912E-04 Moved       5461
+ nghost          421
+Dynamic time =  1.0058770553E-01 Step time =  1.24182E-03 Moved       7282
+ nghost          422
+Dynamic time =  1.0120861729E-01 Step time =  1.86274E-03 Moved       5545
+ number of corrections outer boundary:     1
+ nghost          416
+Dynamic time =  1.0182952905E-01 Step time =  2.48365E-03 Moved       7501
+ nghost          419
+Dynamic time =  1.0245044081E-01 Step time =  3.10456E-03 Moved       5581
+ nghost          412
+Dynamic time =  1.0307135258E-01 Step time =  3.72547E-03 Moved       7245
+ nghost          413
+Dynamic time =  1.0369226434E-01 Step time =  4.34638E-03 Moved       5611
+ nghost          402
+Dynamic time =  1.0431317610E-01 Step time =  4.96729E-03 Moved       7501
+ h too small        1215  times
+ minimum no. of neigh            0
+ minimum no. neigh for sync step           0
+ maximum no. neigh for sync step         206
+ h too big            29  times
+ maximum no. of neigh (not hmin)          202
+ mean    no. density iterations   1.0915
+  maximum no. density iterations            2
+ mean    no. neighbour finds      0.0000
+ mean    no. neighbour fixed pt  0.0000E+00
+Mean number of nneigh(i) =  57.2845
+ 
+Timestep distribution     106461 number active     105088
+Bin Timestep  All Types  Local Gas  Local Non-Gas
+ 0  4.9673E-03          0          0          0
+ 1  2.4836E-03       3780        254          0
+ 2  1.2418E-03      22991       1629          0
+ 3  6.2091E-04      20936       1513          0
+ 4  3.1046E-04      16716       1201          0
+ 5  1.5523E-04      13903        998          0
+ 6  7.7614E-05       7771        558          0
+ 7  3.8807E-05       4893        342          0
+ 8  1.9403E-05       3813        279          0
+ 9  9.7017E-06       1689        113          0
+10  4.8509E-06       1108         74          0
+11  2.4254E-06       3309        242          0
+12  1.2127E-06       4040        287          0
+13  6.0636E-07        139         11          0
+14  3.0318E-07          0          0          0
+15  1.5159E-07          0          0          0
+16  7.5795E-08          0          0          0
+17  3.7897E-08          0          0          0
+18  1.8949E-08          0          0          0
+19  9.4744E-09          0          0          0
+20  4.7372E-09          0          0          0
+21  2.3686E-09          0          0          0
+22  1.1843E-09          0          0          0
+23  5.9215E-10          0          0          0
+24  2.9607E-10          0          0          0
+25  1.4804E-10          0          0          0
+26  7.4018E-11          0          0          0
+27  3.7009E-11          0          0          0
+28  1.8505E-11          0          0          0
+29  9.2523E-12          0          0          0
+ 
+Distributions of timestep criteria - numbers are LOG10(n)
+Bin RK-x RK-v RK-u RK-h CR-2 CR-1 Cool Drag DuDt Ohm  Hall Ambi CCol etaB 1Dust
+ 0    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ 1    -   3.5   -    -    -   3.0   -    -    -    -    -    -    -    -    -   
+ 2    -   4.3   -    -    -   3.5   -    -    -    -    -    -    -    -    -   
+ 3    -   4.0   -    -    -   4.0   -    -    -    -    -    -    -    -    -   
+ 4    -   2.9   -    -    -   4.2   -    -    -    -    -    -    -    -    -   
+ 5    -   3.0   -    -    -   4.1   -    -    -    -    -    -    -    -    -   
+ 6    -   3.2   -    -    -   3.8   -    -    -    -    -    -    -    -    -   
+ 7    -   2.9   -    -    -   3.6   -    -    -    -    -    -    -    -    -   
+ 8    -   3.0   -    -    -   3.4   -    -    -    -    -    -    -    -    -   
+ 9    -   3.1   -    -    -   2.5   -    -    -    -    -    -    -    -    -   
+10    -   3.0   -    -    -   2.1   -    -    -    -    -    -    -    -    -   
+11    -   3.4   -    -    -   2.7   -    -    -    -    -    -    -    -    -   
+12    -   3.5   -    -    -   2.9   -    -    -    -    -    -    -    -    -   
+13    -   2.1   -    -    -   0.3   -    -    -    -    -    -    -    -    -   
+14    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+15    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+16    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+17    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+18    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+19    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+20    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+21    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+22    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+23    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+24    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+25    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+26    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+27    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+28    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+29    -    -    -    -    -    -    -    -    -    -    -    -    -    -    -   
+ BALANCING
+ MOVE         1616        1969        9294
+ MOVE-POST         7678         353        1969
+ nghost          402
+ time used  :    1.256 min. , ghosts :       5624
+ TREE Timing:
+ step only    time:    1.255 min.  99.93 %
+ densityi     time:    0.833 min.  66.34 %
+  densit-1    time:    0.624 min.  74.88 %
+  densit-2    time:    0.209 min.  25.07 %
+  divv        time:    0.019 min.   2.32 %
+ forcei       time:    0.125 min.   9.97 %
+ gforspt      time:    0.000 min.   0.00 %
+ accrete      time:    0.000 min.   0.00 %
+ divBsubcycle time:    0.000 min.   0.00 %
+ step-1       time:    0.000 min.   0.00 %
+ step-2       time:    0.000 min.   0.00 %
+ step-3       time:    0.000 min.   0.02 %
+ step-4       time:    0.000 min.   0.01 %
+ step-5       time:    0.003 min.   0.21 %
+ step-6       time:    0.000 min.   0.01 %
+ step-7       time:    0.000 min.   0.04 %
+ step-8       time:    0.005 min.   0.40 %
+ step-13      time:    0.000 min.   0.01 %
+ step-14      time:    0.001 min.   0.10 %
+ step-15      time:    0.002 min.   0.19 %
+ insulate     time:    0.077 min.   6.12 %
+  TRE mtree   time:    0.064 min.  83.67 %
+  TRE treef   time:    0.000 min.   0.00 %
+  TRE revtree time:    0.012 min.  16.22 %
+  TRE    rt-1 time:    0.012 min.  98.40 %
+  TRE    rt-2 time:    0.000 min.   0.00 %
+ sort         time:    0.000 min. 
+
+
+ ------------------------------------------------
+ ------------ file TEST021 created --------------
+ ------------------------------------------------
+
+
+
+
+ ------> C Y C L E   N O  :   22/ 1  W R I T T E N   O N   D I S K <------
+
+ RUNTIME  :  1.7069800000E+02
+ SIMTIME  :  1.0431317610E-01
+ Free Fall Time  :  1.0499999930E+00
+ General properties of system : 
+ total energy                       :   -5.49871E+00
+ kinetic energy                     :    5.62898E+00
+ rotational energy around z         :    2.38078E+00
+ rotational energy around x         :    2.76617E-01
+ potential energy                   :   -1.27465E+01
+ internal energy                    :    1.61881E+00
+ magnetic energy                    :    0.00000E+00
+ radiation energy                   :    0.00000E+00
+ total angular momentum             :    4.76949E-02
+ total linear momentum              :    3.81319E-05
+ evolutionary energy parmeters : 
+                        alpha  :    1.27001E-01
+       (z)       beta parallel :    1.86779E-01
+       (x)       beta perpend  :    2.17014E-02
+                 Jeans number  :    7.87398E+00
+ escapors (total mass)         :    0.00000E+00
+ number of active particles    :     105088       0
+
+ Object number 1 (    105088 particles ) : 
+ center of mass  x :   3.68476E-07  y :  -3.04848E-07  z :  -6.02610E-08
+ velocity cm    vx :   1.02555E-05 vy :   1.65564E-05 vz :  -3.27834E-05
+ smoothing l.  min :   3.15840E-05 max:   1.81619E-02
+ max. dist. cm   r :   1.99917E-01  z :   1.95214E-01
+ density      mean :   9.94655E+06 max:   5.21702E+08 cen:   1.52895E+07
+ visc. switch  min :   1.00000E-01 max:   1.00000E+00
+ temperature  mean :   1.33039E+01 max:   1.04550E+02 cen:   0.00000E+00
+
+ ------------------------------------------------
+
+
+
+
+
+
+
+ SPH run test01               ended on : 24/ 9/2019  at 12 h.  6 min. 40 sec.
+ cpu time used for this run :     2.845 min.

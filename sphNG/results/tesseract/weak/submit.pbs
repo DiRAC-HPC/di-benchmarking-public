@@ -1,0 +1,58 @@
+#!/bin/bash --login
+
+#PBS -N sphng
+#PBS -l select=16
+#PBS -l walltime=01:00:00
+#PBS -l place=scatter:excl
+#PBS -A ds007
+#PBS -j oe
+
+
+module load intel-tools-18
+
+export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
+cd $PBS_O_WORKDIR
+
+export SPH_ROOT=/home/ds007/ds007/dc-bare2/sphng
+export SPH_EXE_DIR=$SPH_ROOT/bin
+
+export I_MPI_PIN_DOMAIN=omp
+
+export SPH_HOME=$SPH_ROOT/runs/weak/n2
+export OMP_NUM_THREADS=4
+cd $SPH_HOME
+mpirun -n 12 -ppn 6 $SPH_EXE_DIR/sph_tree_rk_gradh initial ifile < $SPH_HOME/setup.txt &> sphng_setup.o$PBS_JOBID
+sleep 10s
+
+export SPH_HOME=$SPH_ROOT/runs/weak/n4/16x6
+export OMP_NUM_THREADS=6
+cd $SPH_HOME
+mpirun -n 16 -ppn 4 $SPH_EXE_DIR/sph_tree_rk_gradh initial ifile < $SPH_HOME/setup.txt &> sphng_setup.o$PBS_JOBID
+sleep 10s
+
+export SPH_HOME=$SPH_ROOT/runs/weak/n8
+export OMP_NUM_THREADS=12
+cd $SPH_HOME
+mpirun -n 16 -ppn 2 $SPH_EXE_DIR/sph_tree_rk_gradh initial ifile < $SPH_HOME/setup.txt &> sphng_setup.o$PBS_JOBID
+
+
+export SPH_HOME=$SPH_ROOT/runs/weak/n2
+export OMP_NUM_THREADS=4
+cd $SPH_HOME
+mpirun -n 12 -ppn 6 $SPH_EXE_DIR/sph_tree_rk_gradh evolution ifile &> sphng.o &
+sleep 10s
+
+export SPH_HOME=$SPH_ROOT/runs/weak/n4/16x6
+export OMP_NUM_THREADS=6
+cd $SPH_HOME
+mpirun -n 16 -ppn 4 $SPH_EXE_DIR/sph_tree_rk_gradh evolution ifile &> sphng.o &
+sleep 10s
+
+export SPH_HOME=$SPH_ROOT/runs/weak/n8
+export OMP_NUM_THREADS=12
+cd $SPH_HOME
+mpirun -n 16 -ppn 2 $SPH_EXE_DIR/sph_tree_rk_gradh evolution ifile &> sphng.o &
+sleep 10s
+
+
+wait

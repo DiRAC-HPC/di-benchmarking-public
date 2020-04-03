@@ -1,0 +1,26 @@
+# Instructions for building sphNG binary on cosma7.
+#
+# These instructions assume that you have previously run the init instructions (see "init.txt"),
+# i.e., you have already cloned from "https://github.com/DiRAC-HPC/di-benchmarking.git".
+
+
+# login to cosma7
+ssh <username>@login7.cosma.dur.ac.uk
+
+# setup work area
+export WORK=/path/to/work/dir
+cd $WORK/sphng
+
+
+# load intel compiler modules
+module load intel_comp/2018-update2
+module load intel_mpi/2018
+
+
+# build sphNG binary
+export SYSTEM=intel
+make clean
+make mpi=yes openmp=yes gradhrk
+mv sph_tree_rk_gradh ./bin/
+make clean
+

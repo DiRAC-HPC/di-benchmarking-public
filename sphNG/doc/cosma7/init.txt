@@ -1,0 +1,46 @@
+# Instructions for setting up a sphNG working area on cosma7.
+
+
+# login to cosma7
+ssh <username>@login7.cosma.dur.ac.uk
+
+# setup work area
+export WORK=/path/to/work/dir
+cd $WORK
+
+
+# Extract the sphNG files from di-benchmarking github repository
+#######################################################################################
+git clone https://github.com/DiRAC-HPC/di-benchmarking.git
+mv $WORK/di-benchmarking/sphNG $WORK/
+rm -rf $WORK/di-benchmarking
+#######################################################################################
+
+
+# Setup sphng build folder and create directories for required benchmark runs.
+#######################################################################################
+cp -r $WORK/sphNG/src $WORK/sphng
+mkdir -p $WORK/sphng/runs
+#######################################################################################
+
+
+# Copy the submission scripts and supporting files required for the scaling runs.
+################################################################################################
+cp -r $WORK/sphNG/results/cosma7/single $WORK/sphng/runs/
+cp -r $WORK/sphNG/results/cosma7/strong $WORK/sphng/runs/
+cp -r $WORK/sphNG/results/cosma7/weak $WORK/sphng/runs/
+
+# delete previously committed results
+rm -rf $WORK/sphng/runs/single/*/sphng*
+rm -rf $WORK/sphng/runs/strong/*/sphng*
+rm -rf $WORK/sphng/runs/weak/*/sphng*
+################################################################################################
+
+
+# copy performance analysis python scripts to runs folder
+cp $WORK/sphNG/analysis/get_performance_metric.py $WORK/sphng/runs/
+cp $WORK/sphNG/analysis/summarise_performance_data.sh $WORK/sphng/runs/
+
+
+# delete remaining cloned sphNG files
+rm -rf $WORK/sphNG

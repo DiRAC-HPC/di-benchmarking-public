@@ -1,0 +1,137 @@
+# Instructions for running the sphNG benchmarks on tesseract.
+#
+# These instructions assume that you have previously run the init and make instructions
+# (see "init.txt" and "make.txt"), i.e., you have already cloned from "https://github.com/DiRAC-HPC/di-benchmarking.git",
+# and you have built the ramses3d binary.
+
+
+# login to tesseract
+ssh <username>@tesseract.dirac.ed.ac.uk
+
+# move to work area
+export WORK=/path/to/work/dir
+cd $WORK/sphng/runs
+
+
+# Run the single node benchmarks.
+################################################################################################
+
+# The single node benchmarks run with a particle count of 2e5 and are intended to find the
+# optimum combination of MPI process count and OpenMP thread count.
+
+cd $WORK/sphng/runs/single/1x24
+
+# Edit "submit.pbs" such that "SPH_ROOT" and "#PBS -A" are set appropriately.
+
+# run with 1 MPI process and 24 OpenMP threads per MPI process (1x24)
+qsub submit.pbs
+
+# The single-node benchmark should take around 10 minutes to run and the sphng output file
+# should be written to "$WORK/sphng/runs/single/1x28".
+
+cd $WORK/sphng/runs/single/2x12
+# edit "submit.pbs" as before
+qsub submit.pbs
+
+cd $WORK/sphng/runs/single/4x6
+# edit "submit.pbs" as before
+qsub submit.pbs
+
+cd $WORK/sphng/runs/single/6x4
+# edit "submit.pbs" as before
+qsub submit.pbs
+
+cd $WORK/sphng/runs/single/8x3
+# edit "submit.pbs" as before
+qsub submit.pbs
+
+cd $WORK/sphng/runs/single/12x2
+# edit "submit.pbs" as before
+qsub submit.pbs
+
+cd $WORK/sphng/runs/single/24x1
+# edit "submit.pbs" as before
+qsub submit.pbs
+################################################################################################
+
+
+# Run the strong scaling benchmarks.
+################################################################################################
+
+# The strong scaling benchmarks run with a particle count of 2e5.
+
+# The combination of MPI process count and OpenMP thread count that yielded the fastest runtime
+# for the single node benchmarks is chosen for the strong scaling. The number of MPI processes
+# is changed as little as possible as the number of nodes is increased.
+
+cd $WORK/sphng/runs/strong/n1
+
+# Edit "submit.pbs" such that "SPH_ROOT" and "#PBS -A" are set appropriately.
+
+# run the single-node strong-scaling benchmark
+qsub submit.pbs
+
+# The single-node benchmark should take around 10 minutes to run and the sphng output file
+# should be written to "$WORK/sphng/runs/strong/n1".
+
+cd $WORK/sphng/runs/strong
+
+# This submission script submits to the 16-node queue (there is no 2, 4 or 8 node queue on tesseract),
+# so one 2-node job, one 4-node job and one 8-node job are run at the same time.
+# Edit "submit.pbs" as before.
+qsub submit.pbs
+
+# run the 16-node strong-scaling benchmark
+cd $WORK/sphng/runs/strong/n16
+# edit "submit.pbs" as before
+qsub submit.pbs
+################################################################################################
+
+
+# Run the weak scaling benchmarks.
+################################################################################################
+# The weak scaling benchmarks run with increasing particle counts.
+# 2e5 on 1 node.
+# 4e5 on 2 nodes.
+# 8e5 on 4 nodes.
+# 1.6e6 on 8 nodes.
+# 3.2e6 on 16 nodes.
+
+# The combination of MPI process count and OpenMP thread count that yielded the fastest runtime
+# for the single node benchmarks is chosen for the weak scaling. The number of MPI processes
+# is changed as little as possible as the number of nodes is increased.
+
+cd $WORK/sphng/runs/weak/n1
+
+# Edit "submit.pbs" as for the strong scaling runs.
+
+# run the single-node weak-scaling benchmark
+qsub submit.pbs
+
+# The single-node benchmark should take around 10 minutes to run and the sphng output file
+# should be written to "$WORK/sphng/runs/weak/n1".
+
+cd $WORK/sphng/runs/weak
+
+# This submission script submits to the 16-node queue (there is no 2, 4 or 8 node queue on tesseract),
+# so one 2-node job, one 4-node job and one 8-node job are run at the same time.
+# Edit "submit.pbs" as before.
+qsub submit.pbs
+
+# run the 16-node weak-scaling benchmark
+cd $WORK/sphng/runs/weak/n16
+# edit the "submit.pbs" as before
+qsub submit.pbs
+################################################################################################
+
+
+# Collect scaling results into summary files.
+################################################################################################
+cd $WORK/sphng/runs
+
+# Running "get_performance_metric.py" requires at least Python 2.7.5.
+
+python get_performance_metric.py sphng ./single/\*x\*/test01\* -1 2 21 > ./single/summary.txt
+python get_performance_metric.py sphng ./strong/n\*/test01\* -1 2 21 > ./strong/summary.txt
+python get_performance_metric.py sphng ./weak/n\*/test01\* -1 2 20 > ./weak/summary.txt
+################################################################################################

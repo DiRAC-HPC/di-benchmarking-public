@@ -1,0 +1,32 @@
+# cold (10K) uniform spherical cloud, 2e5 particles
+# compiled with idim=4001000
+# particle count doubles for each doubling of core count, starting at 2e5 particles and 1 compute node
+
+
+# The following format header identifies the columns of data printed below each machine heading.
+
+# [nodes] [mpi processes] [openmp threads per mpi process] [runs] [worst=0,mean=1] [runtime] [sim years per sec]
+
+# Each row of data represents a number of executions of the benchmark for a given number of nodes, mpi processes and openmp threads.
+# The size of each execution set is given by the value in the [runs] column.
+# The runtime is taken as an average over the execution set, assuming the standard deviation is within 1% of the mean,
+# otherwise the runtime is taken from the slowest execution.
+# The value presented in the last column (an application-specific performance metric) follows this procedure.
+
+
+! tesseract (24,96)
+1 12 2 3 1 1.497E+02 5.960E-04
+2 12 4 4 0 1.091E+03 8.196E-05
+4 16 6 4 0 2.179E+03 4.103E-05
+8 16 12 3 0 2.712E+03 3.297E-05
+16 16 24 3 0 8.170E+02 1.094E-04
+
+
+! cosma7 (28,512)
+1 14 2 3 1 1.277E+02 7.008E-04
+2 14 4 3 1 1.897E+02 4.712E-04
+4 16 7 3 0 3.200E+02 2.792E-04
+8 16 14 3 0 4.980E+02 1.796E-04
+16 16 28 3 1 7.147E+02 1.251E-04
+
+

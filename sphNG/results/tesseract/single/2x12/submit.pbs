@@ -1,0 +1,36 @@
+#!/bin/bash --login
+
+#PBS -N sphng
+#PBS -l select=1
+#PBS -l walltime=00:30:00
+#PBS -l place=scatter:excl
+#PBS -A ds007
+#PBS -j oe
+
+export mpicnt=2
+export threadspermpi=12
+export threadcnt=`expr ${mpicnt} \* ${threadspermpi}`
+export OMP_NUM_THREADS=$threadspermpi
+export I_MPI_PIN_DOMAIN=omp
+export corespn=24
+export nodecnt=`qstat -f $PBS_JOBID | awk '/Resource_List.nodect/ {print $3}'`
+export corecnt=`expr ${nodecnt} \* ${corespn}`
+export mpicntpn=`expr ${mpicnt} \/ ${nodecnt}`
+
+if [ $threadcnt -ne $corecnt ]
+then
+  echo "Error, mismatch between requested and available hardware!"
+  exit -1
+fi
+
+module load intel-tools-18
+
+export PBS_O_WORKDIR=$(readlink -f $PBS_O_WORKDIR)
+cd $PBS_O_WORKDIR
+
+export SPH_ROOT=/home/ds007/ds007/dc-bare2/sphng
+export SPH_EXE_DIR=$SPH_ROOT/bin
+export SPH_HOME=$SPH_ROOT/runs/single/${mpicnt}x${threadspermpi}
+
+mpirun -n $mpicnt -ppn $mpicntpn $SPH_EXE_DIR/sph_tree_rk_gradh initial ifile < $SPH_HOME/setup.txt &> sphng_setup.o$PBS_JOBID
+mpirun -n $mpicnt -ppn $mpicntpn $SPH_EXE_DIR/sph_tree_rk_gradh evolution ifile
