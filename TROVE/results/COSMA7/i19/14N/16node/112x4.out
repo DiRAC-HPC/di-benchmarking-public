@@ -1,0 +1,42 @@
+  B2     3669  24824.321332   ( A1 ;  0  0  0 ) ( A1  A1  B2  A1 ;   2   0   0   8   4   0 )      0.80 (   2   0   0  12   0   0   0 ) (   3   1  90   1 )
+
+
+ Memory Report:
+ Active Arrays                                        size (Gb)
+ trove%g_vib%me                                        0.1115E+00                
+ trove%g_rot%me                                        0.2788E-01                
+ trove%g_cor%me                                        0.5576E-01                
+ me%fields%coeff                                       0.1078E+00                
+ gvib-grot-gcor-fields                                 0.1296E+01                
+ Total memory   =                                     1.62470391 Gb
+ Maximal memory =                                     5.51457106 Gb (            64.0)
+
+ (      117 arrays contributing less than 1% are not shown)
+
+
+              Timing data at 2020/02/21 12:12:19
+
+                                            Total time (seconds)  Self time (seconds)
+ Timer                               Calls  --------------------  -------------------
+ -----                               -----       Real       CPU        Real       CPU
+
+ TROVE                                  1.      583.5    1187.4         5.4       5.5
+ Kinetic                                1.      125.6     126.6        61.7      62.1
+ s_vib_s_rot                            1.       64.0      64.5        64.0      64.5
+ Potential                              1.        4.5      17.8         4.5      17.8
+ External                               1.        7.4      29.2         7.4      29.2
+ FLcheck_point_Hamiltonian              2.       40.3       0.7        40.3       0.7
+ Contraction & symmetrization           1.        4.2      14.0         1.8       7.3
+ Contracted matelements-class           1.      371.2     898.8       127.1     171.9
+ contract_matrix                   255948.       10.7      41.6        10.7      41.6
+ contract_matrix_dgemm             255948.       11.0      44.1        11.0      44.1
+ contract_matrix_sum_field          63987.      133.7     533.8       133.7     533.8
+ MPI_transpose                         31.       88.7     107.3         0.0       0.0
+ MPI_transpose_sendrecv                31.       88.7     107.1        88.7     107.1
+ Contracted Hamiltonian                 1.       24.3      93.8         0.6       1.9
+ Full diagonalization                   4.       21.2      84.6        21.2      84.6
+
+ ( 13 timers contributing less than 1% are not shown)
+
+
+End of TROVE

@@ -1,0 +1,22 @@
+#/bin/bash
+#PBS -l nodes=2:ppn=36
+#PBS -l walltime=4:0:0
+#PBS -A #ACCOUNT#
+#PBS -q #QUEUE
+
+# Load requires modules
+module purge
+module load intel/compilers/19.0.3
+module load intel/mpi/19.0.3
+
+WORKDIR=#WORK_DIR#
+TROVE=#PATH_TO_j_trove.x#
+INFILE=#INPUT_FILE#
+OUTFILE=#OUTPUT_FILE_NAME#
+
+cd $WORKDIR
+
+# Ex. 2 nodes, 2 processes per node, 18 OMP threads
+export OMP_NUM_THREADS=18
+mpirun -ppn 2 $TROVE $INFILE > $OUTFILE.2n.2x18
+

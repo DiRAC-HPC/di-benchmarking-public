@@ -1,0 +1,35 @@
+  B2     3669  24824.321332   ( A1 ;  0  0  0 ) ( A1  A1  B2  A1 ;   2   0   0   8   4   0 )      0.80 (   2   0   0  12   0   0   0 ) (   3   1  90   1 )
+
+
+ Memory Report:
+ Active Arrays                                        size (Gb)
+ trove%g_vib%me                                        0.1115E+00                
+ trove%g_rot%me                                        0.2788E-01                
+ trove%g_cor%me                                        0.5576E-01                
+ me%fields%coeff                                       0.1078E+00                
+ gvib-grot-gcor-fields                                 0.1296E+01                
+ Total memory   =                                     1.62470391 Gb
+ Maximal memory =                                     5.51457106 Gb (            64.0)
+
+ (      117 arrays contributing less than 1% are not shown)
+
+
+              Timing data at 2019/11/01 21:09:48
+
+                                            Total time (seconds)  Self time (seconds)
+ Timer                               Calls  --------------------  -------------------
+ -----                               -----       Real       CPU        Real       CPU
+
+ TROVE                                  1.     1766.0   21263.0         4.1       7.0
+ Kinetic                                1.       98.5     105.0        47.2      50.5
+ s_vib_s_rot                            1.       51.3      54.6        51.3      54.6
+ Contracted matelements-class           1.     1640.5   20789.5       413.8    7366.3
+ contract_matrix_sum_field          63987.      694.8   12458.6       694.8   12458.6
+ MPI_transpose                         31.      492.6     598.9         0.0       0.0
+ MPI_transpose_sendrecv                31.      492.4     595.2       492.4     595.2
+ MPI_write_matrix                      16.       21.6      50.5        21.6      50.5
+
+ ( 22 timers contributing less than 1% are not shown)
+
+
+End of TROVE

@@ -1,0 +1,40 @@
+  B2     6810  28801.299569   ( A1 ;  0  0  0 ) ( A1  A1  B2  A1 ;   2   0   0   9   5   0 )      0.91 (   2   0   0  14   0   0   0 ) (   3   1 119   1 )
+
+
+ Memory Report:
+ Active Arrays                                        size (Gb)
+ trove%g_vib%me                                        0.1432E+00                
+ trove%g_cor%me                                        0.7162E-01                
+ me%fields%coeff                                       0.1384E+00                
+ gvib-grot-gcor-fields                                 0.4510E+01                
+ Total memory   =                                     4.92947728 Gb
+ Maximal memory =                                    18.46114986 Gb (            64.0)
+
+ (      118 arrays contributing less than 1% are not shown)
+
+
+              Timing data at 2020/02/21 15:42:20
+
+                                            Total time (seconds)  Self time (seconds)
+ Timer                               Calls  --------------------  -------------------
+ -----                               -----       Real       CPU        Real       CPU
+
+ TROVE                                  1.      737.5    3312.6         5.3       5.0
+ Kinetic                                1.      104.6     106.2        50.2      51.0
+ s_vib_s_rot                            1.       54.4      55.2        54.4      55.2
+ External                               1.        6.3      37.1         6.3      37.1
+ FLcheck_point_Hamiltonian              2.       27.7       1.3        27.7       1.3
+ Contracted matelements-class           1.      517.1    2727.7       127.3     741.1
+ contract_matrix                   255948.       12.9      74.8        12.9      74.8
+ contract_matrix_dgemm             255948.       13.4      81.6        13.4      81.6
+ contract_matrix_sum_field          63987.      288.9    1727.7       288.9    1727.7
+ MPI_transpose                         31.       57.3      86.0         0.0       0.0
+ MPI_transpose_sendrecv                31.       57.2      85.5        57.2      85.5
+ MPI_write_matrix                      16.       17.4      16.5        17.4      16.5
+ Contracted Hamiltonian                 1.       67.1     387.3         1.2       5.5
+ Full diagonalization                   4.       60.8     363.7        60.8     363.7
+
+ ( 16 timers contributing less than 1% are not shown)
+
+
+End of TROVE

@@ -1,0 +1,36 @@
+  B2     6810  28801.299569   ( A1 ;  0  0  0 ) ( A1  A1  B2  A1 ;   2   0   0   9   5   0 )      0.91 (   2   0   0  14   0   0   0 ) (   3   1 119   1 )
+
+
+ Memory Report:
+ Active Arrays                                        size (Gb)
+ trove%g_vib%me                                        0.1432E+00                
+ trove%g_cor%me                                        0.7162E-01                
+ me%fields%coeff                                       0.1384E+00                
+ gvib-grot-gcor-fields                                 0.4510E+01                
+ Total memory   =                                     4.92947728 Gb
+ Maximal memory =                                    18.46114986 Gb (            64.0)
+
+ (      118 arrays contributing less than 1% are not shown)
+
+
+              Timing data at 2019/11/05 22:52:49
+
+                                            Total time (seconds)  Self time (seconds)
+ Timer                               Calls  --------------------  -------------------
+ -----                               -----       Real       CPU        Real       CPU
+
+ TROVE                                  1.     2190.3   16258.1         5.1       6.3
+ Kinetic                                1.      100.8     103.6        48.3      49.7
+ s_vib_s_rot                            1.       52.4      53.9        52.4      53.9
+ Contracted matelements-class           1.     2015.0   15574.0       476.5    4246.6
+ contract_matrix_sum_field          63987.     1197.3   10743.5      1197.3   10743.5
+ MPI_transpose                         31.      283.4     332.9         0.0       0.0
+ MPI_transpose_sendrecv                31.      283.1     330.3       283.1     330.3
+ MPI_write_matrix                      16.       33.1      30.3        33.1      30.3
+ Contracted Hamiltonian                 1.       53.8     455.5         1.2       7.7
+ Full diagonalization                   4.       47.2     423.5        47.2     423.5
+
+ ( 20 timers contributing less than 1% are not shown)
+
+
+End of TROVE

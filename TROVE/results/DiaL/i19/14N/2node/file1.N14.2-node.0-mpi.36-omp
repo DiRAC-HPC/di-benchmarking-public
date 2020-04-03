@@ -1,0 +1,36 @@
+  B2     3669  24824.321332   ( A1 ;  0  0  0 ) ( A1  A1  B2  A1 ;   2   0   0   8   4   0 )      0.80 (   2   0   0  12   0   0   0 ) (   3   1  90   1 )
+
+
+ Memory Report:
+ Active Arrays                                        size (Gb)
+ trove%g_vib%me                                        0.1115E+00                
+ trove%g_rot%me                                        0.2788E-01                
+ trove%g_cor%me                                        0.5576E-01                
+ me%fields%coeff                                       0.1078E+00                
+ gvib-grot-gcor-fields                                 0.1296E+01                
+ Total memory   =                                     1.62470391 Gb
+ Maximal memory =                                     5.51457106 Gb (            64.0)
+
+ (      117 arrays contributing less than 1% are not shown)
+
+
+              Timing data at 2019/11/01 21:51:56
+
+                                            Total time (seconds)  Self time (seconds)
+ Timer                               Calls  --------------------  -------------------
+ -----                               -----       Real       CPU        Real       CPU
+
+ TROVE                                  1.     2527.4   47125.4         3.9       9.7
+ Kinetic                                1.       98.6     111.5        47.1      53.5
+ s_vib_s_rot                            1.       51.5      58.0        51.5      58.0
+ Contracted matelements-class           1.     2401.7   46250.5       497.0   17564.4
+ contract_matrix                   255948.       15.3     530.6        15.3     530.6
+ contract_matrix_dgemm             255948.       17.5     683.5        17.5     683.5
+ contract_matrix_sum_field          63987.      725.2   26023.5       725.2   26023.5
+ MPI_transpose                         31.     1121.5    1340.3         0.0       0.1
+ MPI_transpose_sendrecv                31.     1121.2    1327.2      1121.2    1327.2
+
+ ( 21 timers contributing less than 1% are not shown)
+
+
+End of TROVE

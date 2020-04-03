@@ -1,0 +1,38 @@
+  B2     6810  28801.299569   ( A1 ;  0  0  0 ) ( A1  A1  B2  A1 ;   2   0   0   9   5   0 )      0.91 (   2   0   0  14   0   0   0 ) (   3   1 119   1 )
+
+
+ Memory Report:
+ Active Arrays                                        size (Gb)
+ trove%g_vib%me                                        0.1432E+00                
+ trove%g_cor%me                                        0.7162E-01                
+ me%fields%coeff                                       0.1384E+00                
+ gvib-grot-gcor-fields                                 0.4510E+01                
+ Total memory   =                                     4.92947728 Gb
+ Maximal memory =                                    18.46114986 Gb (            64.0)
+
+ (      118 arrays contributing less than 1% are not shown)
+
+
+              Timing data at 2020/02/21 14:00:26
+
+                                            Total time (seconds)  Self time (seconds)
+ Timer                               Calls  --------------------  -------------------
+ -----                               -----       Real       CPU        Real       CPU
+
+ TROVE                                  1.     1183.2    8595.8         5.1       6.3
+ Kinetic                                1.      101.1     104.0        48.6      50.1
+ s_vib_s_rot                            1.       52.5      53.9        52.5      53.9
+ Contracted matelements-class           1.     1005.9    7912.0       248.5    2205.2
+ contract_matrix                   255948.       13.2     112.9        13.2     112.9
+ contract_matrix_dgemm             255948.       13.1     120.0        13.1     120.0
+ contract_matrix_sum_field          63987.      588.2    5277.8       588.2    5277.8
+ MPI_transpose                         31.      119.5     168.5         0.0       0.0
+ MPI_transpose_sendrecv                31.      119.3     166.9       119.3     166.9
+ MPI_write_matrix                      16.       23.4      27.7        23.4      27.7
+ Contracted Hamiltonian                 1.       53.0     455.8         1.2       7.5
+ Full diagonalization                   4.       47.4     425.8        47.4     425.8
+
+ ( 18 timers contributing less than 1% are not shown)
+
+
+End of TROVE
