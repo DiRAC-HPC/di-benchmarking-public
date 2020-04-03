@@ -9,6 +9,8 @@ The benchmark performance has been evaluated on the following platforms:
 | DiRAC Memory Intensive (COSMA7) | 2x Intel Xeon Skylake Gold 5120, 512 GiB DDR4 | Mellanox EDR |
 | DiRAC Extreme Scaling (Tesseract) | 2x Intel Xeon Skylake Silver 4112, 96 GiB DDR4 | Intel OPA |
 
+## Repository structure
+
 Subdirectories:
 
    - [doc/](doc/) - Information on compiling, running and extracting performance data for the sphNG benchmarks on different systems
@@ -18,7 +20,7 @@ Subdirectories:
    
 The documentation for running the sphNG benchmarks is structured according to the target platforms. For example, the
 instructions for running sphNG on Tesseract can be found in [doc/tesseract/](doc/tesseract/), and within that folder are
-three text files, init, make and run. The init text file shows how to deploy the sphNG source/data to Tesseract. The make
+three text files, init, make and run. The init text file shows how to deploy the sphNG source/data. The make
 instructions tell you how to build sphNG alongwith any pre-requisite software components. Finally, the run text file explains
 how to run the benchmarks. Similar text files exist for all the other target platforms.
 
@@ -26,3 +28,9 @@ Once the sphNG benchmarks have been run on all the machines, you can then gather
 three text files, one for strong scaling, one for weak scaling and the other for single node performance, see the instructions
 given in [doc/analysis.txt](doc/analysis.txt). Please note, the resulting text files, [results/scaling_strong.txt](results/scaling_strong.txt), [results/scaling_weak.txt](results/scaling_weak.txt) and [results/scaling_single.txt](results/scaling_single.txt), contain comments that explain the format of the data contained therein. The analysis
 instructions also explain how to create plots from the performance data.
+
+## Access to the sphNG source code
+
+The sphNG source code can be obtained on request from Prof. Matthew Bate at the University of Exeter ([M.R.Bate@exeter.ac.uk](mailto:M.R.Bate@exeter.ac.uk).
+
+
