@@ -18,5 +18,5 @@ cd $WORKDIR
 
 # Ex. 2 nodes, 2 processes per node, 16 OMP threads
 export OMP_NUM_THREADS=16
-mpirun -ppn 2 $TROVE $INFILE > $OUTFILE.1n.2x16
+mpirun -ppn 2 $TROVE $INFILE > $OUTFILE.2n.2x16
 
