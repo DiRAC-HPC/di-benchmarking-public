@@ -9,4 +9,3 @@ cosmo3d-IC-256.tar.gz
 cosmo3d-IC-322.tar.gz
 cosmo3d-IC-406.tar.gz
 cosmo3d-IC-512.tar.gz
-cosmo3d-IC-645.tar.gz
